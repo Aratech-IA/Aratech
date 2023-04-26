@@ -1,0 +1,46 @@
+{% load static %}
+{% load i18n %}
+
+<head>
+    <title>{% trans 'Footer' %}</title>
+</head>
+
+
+<footer class="{% if index %}fixed-bottom{% endif %} d-flex justify-content-around justify-content-md-evenly align-items-center bg-grey fs-7 py-2">
+    <div class="entreprise d-flex flex-column align-items-center">
+        <!-- Logo de la société -->
+        <a class="text-uppercase font-weight-bold p-0 m-0 pb-1" href="{% url 'index' %}">
+            <img src="{% static 'app0_base/img/logo_aratech_carre-100x120.png' %}" class="navbar-brand-img" width="50em">
+        </a>
+        <p>Rhône-Apes</p>
+        <!-- <p>00 00 00 00 00</p> -->
+    </div>
+
+    <div class="sommaire text-uppercase d-flex flex-column">
+        <a href="{% url 'team' %}" class="text-center">
+            <p>{% trans "The team" %}</p>
+        </a>
+        <a href="{% url 'expertise' %}" class="text-center pt-1">
+            <p>{% trans "Expertise" %}</p>
+        </a>
+        <a href="{% url 'our ai' %}" class="text-center pt-1">
+            <p>{% trans "Our A.I." %}</p>
+        </a>
+        <a href="{% url 'serenicia' %}" class="text-center pt-1">
+            <p>{% trans "Serenicia" %}</p>
+        </a>
+        <a href="{% url 'contact' %}" class="text-center pt-1">
+            <p>{% trans "Contact" %}</p>
+        </a>
+        <a href="{% url 'legal notice' %}" class="text-center pt-1">
+            <p>Mentions légales</p>
+        </a>
+    </div>
+
+    <div class="discutons d-flex flex-column align-items-center">
+        <h6 class="purple mb-2 fw-bold">{% trans "A project" %} ?</h6>
+        <a href="{% url 'contact' %}" class="btn btn-perso text-center white">
+            <h7>{% trans "Let's discuss it" %} !</h7>
+        </a>
+    </div>
+</footer>

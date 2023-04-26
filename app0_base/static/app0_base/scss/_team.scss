@@ -1,0 +1,21 @@
+.purplesquare {
+    height: 18em;
+    width: 15.5em;
+    margin-right: 1.5em;
+}
+
+.presentation {
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        width: 33.333333%;
+    }
+
+    img {
+        height: 18em;
+        top: -4em;
+    }
+
+    .nomposte {
+        bottom: 0;
+    }
+}

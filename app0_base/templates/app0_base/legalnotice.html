@@ -1,0 +1,76 @@
+{% extends "app0_base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block imagefond %}
+<img src="{% static 'app0_base/img/legal-notice_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+{% endblock imagefond %}
+
+
+{% block content %}
+
+<!-- Page contact -->
+<div class="contact_page bg-grey">
+    <h3 class="text-center pt-4 mb-0 pink">{% trans "Legal notice" %}</h3>
+</div>
+
+<!-- Mentions légales -->
+<div class="trucsJuridiquesEnnuyeux bg-grey">
+    <div class="trucsJuridiquesEnnuyeux--content p-2 b-5 px-md-5 py-md-4">
+
+        <p>ARATECH {% trans "is a registered trademark" %}.</p>
+        <p>{% trans "In accordance with the Data Protection Act of January 6, 1978, the website www.aratech.fr is declared to the CNIL under number 4932479" %}.</p>
+        
+
+        <h5 class="ps-2 pt-4">{% trans "Site editor" %}</h5>
+        <p>ARATECH</p>
+        <!-- <p>adresse</p> -->
+        <!-- <p>69000 LYON</p> -->
+        <p>Rhone-Alpes</p>
+
+        <!-- <p>Téléphone : oo oo oo oo oo</p> -->
+
+        <!-- <p class="pt-2">Numéro SIRET (siège) : 00000000000000</p>
+        <p class="py-1">Capital social : 000 Euros</p>
+        <p>Directeur Général : Prénom NOM</p>
+        
+        <p>N° de TVA Intracommunautaire :	FR00000000000</p> -->
+
+        <h5 class="ps-2 pt-4">{% trans "Site host" %}</h5>
+        <p>OVH</p>
+        <p>2 Rue Kellermann</p>
+        <p>59100 ROUBAIX</p>
+        <p class="pt-2">09 72 10 10 07</p>
+
+        <h5 class="ps-2 pt-4">{% trans "consumer mediator" %}</h5>
+        <p>{% trans "Any consumer has the right to have recourse to a consumer mediator for the amicable resolution of the dispute between him and a professional" %}.</p>
+        <p class="py-2">{% trans "The use of the consumer mediator is free for the subscriber at home" %}.</p>
+        <p>{% trans "The contact details of the consumer mediator are" %} :</p>
+        <p class="py-1">•	{% trans "Web address" %} : https://www.mediationconso-ame.com/</p>
+        <p>•	{% trans "Address" %} : AME Conso, 11 place Dauphine 75001 PARIS</p>
+        <p class="pt-1">•	{% trans "Phone" %} : 09 53 01 02 69</p>
+
+        <h5 class="ps-2 pt-4">{% trans "Copyright" %}</h5>
+        <p>{% trans "The general structure, texts, photography, sounds, video sequences, graphics and any other component of the SITE are the exclusive property of ARATECH or its partners. The entire SITE is subject to French and international legislation on copyright and intellectual property." %}.</p>
+        <p class="pt-2">{% trans "Any use or reproduction, total or partial, of the SITE, of the elements which compose it and/or of the information which appears there, by any process whatsoever, without the authorization of the holder of the rights to these elements, will be immediately prosecuted, either in the context of an action for infringement, or in the context of an action for unfair competition" %}.</p>
+
+        <h5 class="ps-2 pt-4">{% trans "Hypertext links" %}</h5>
+        <p>ARATECH {% trans "authorizes any website to establish a link pointing to all or part of the site, subject to the legal provisions in force, the COMPANY reserving the right, at any time, without notice and without having to justify its decision, to prohibit this link" %}.</p>
+
+
+        <h5 class="ps-2 pt-4">{% trans "Privacy Policy" %}</h5>
+        <p>{% trans "The website www.aratech.fr is committed to respecting the privacy of users and the confidentiality of their personal data when browsing the site" %}.</p>
+
+        <h5 class="ps-2 pt-4">{% trans "Collection of Personal Data" %}</h5>
+        <p>{% trans "Data may be collected when the user completes a contact questionnaire" %}.</p>
+
+        <h5 class="ps-2 pt-4">{% trans "Cookies" %}</h5>
+        <p>{% trans "This site does not use cookies" %}</p>
+
+    </div>
+
+    {% include 'app0_base/footer.html' %}
+
+</div>
+
+{% endblock content %} 

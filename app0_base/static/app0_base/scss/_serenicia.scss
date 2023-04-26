@@ -1,0 +1,85 @@
+.fonctionnalites {
+    p {
+        font-size: 1.1em;
+    }
+
+    a {
+        color: $darkblue !important;
+  
+        &:hover {
+            color: $lightblue !important;
+        }
+    }
+
+    width: 100%;
+
+    @media screen and (min-width: $phone-media-rupture) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: $desktops-media-rupture) {
+        width: 80%;
+    }
+}
+
+.presentation_serenicia {
+    p {
+        font-size: 1em;
+    }
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        width: 80%;
+    }
+}
+
+.detail_fonctionnalites {
+    svg, h5 {
+        color: $darkblue;
+    }
+
+    .fonctionnalite {
+        max-width: 1000px;
+        scroll-margin-top: 100px;
+    }
+
+    .image {
+        background-size: cover;
+        height: 15em;
+        width: 80%;
+
+        @media screen and (min-width: $tablette-media-rupture) {
+            height: 90%;
+            width: 100%;
+        }
+    }
+
+    #messagerie {
+        .image {
+            background-image: url(../img/messagerie.jpg);
+        }
+    }
+
+    #soinsactivite {
+        .image {
+            background-image: url(../img/activity.jpg);
+        }
+    }
+
+    #communication {
+        .image {
+            background-image: url(../img/serenicia_back.jpg);
+        }
+    }
+
+    #cuisine {
+        .image {
+            background-image: url(../img/repas.jpg);
+        }
+    }
+
+    #informations {
+        .image {
+            background-image: url(../img/real-time.jpg);
+        }
+    }
+}

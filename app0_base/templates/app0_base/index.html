@@ -1,0 +1,30 @@
+{% extends "app0_base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block imagefond %}
+<img src="{% static 'app0_base/img/index_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+{% endblock imagefond %}
+
+
+{% block content %}
+
+<!-- Page index -->
+<div class="index_page">
+    <div class="d-md-flex justify-content-around px-2 px-md-0">
+        <h2 class="text1 pe-md-5 pb-4 pb-md-0">{% trans "Developer of applications containing Artificial Intelligence" %}</h2>
+        <div class="d-flex flex-column justify-content-center align-items-end align-items-md-center">
+            <h2 class="text-end">{% trans "A need for A.I." %} ?</h2>
+            <h2 class="text-end">{% trans "An app project" %} ?</h2>
+            <a href="{% url 'contact' %}" class="btn btn-perso text-center white">
+                <h4 class="mb-0">{% trans "Let's talk about it" %} !</h4>
+            </a>
+        </div>
+    </div>
+    
+    <h1 class="text2 pink w-75 mx-auto text-center">{% trans "Simplify your life with our Artificial Intelligence and/or a tailor-made application" %} !</h1>
+</div>
+
+{% include 'app0_base/footer.html' %}
+
+{% endblock content %}

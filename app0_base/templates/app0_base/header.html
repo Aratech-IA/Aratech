@@ -1,0 +1,80 @@
+{% load static %}
+{% load i18n %}
+
+{% url 'index' as index %}
+{% url 'team' as team %}
+{% url 'expertise' as expertise %}
+{% url 'our ai' as ai %}
+{% url 'serenicia' as serenicia %}
+{% url 'contact' as contact %}
+
+
+<head>
+    <title>{% trans 'Header' %}</title>
+</head>
+
+
+<header>
+    <nav id="navbar" class="navbar navbar-expand-md mx-auto {% if '/contact' in request.path %}navbarcontact{% else %}{% endif %} py-1">
+        <div class="container-fluid px-0">
+
+            <!-- Logo de la société -->
+            <div class="d-flex align-items-center ps-2 pe-md-2 pe-lg-5">
+                <a class="navbar-brand text-uppercase font-weight-bold p-0 m-0" href="{% url 'index' %}">
+                    <img src="{% static 'app0_base/img/Logo_aratech_horizontal-255x100.png' %}" class="navbar-brand-img">
+                </a>
+            </div>   
+
+            <!-- Bouton menu burger -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg width="3em" height="3em" viewbox="0 0 40 40">
+                        <title>interface-burger</title>
+                        <g>
+                            <line x1="8" y1="12" x2="32" y2="12" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                            <line x1="8" y1="20" x2="32" y2="20" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                            <line x1="8" y1="28" x2="20.8" y2="28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                        </g>
+                    </svg>
+                </span>  
+            </button>
+
+            <!-- collapse  -->
+            <div class="collapse navbar-collapse mt-5 mt-md-0" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0 w-100 d-flex justify-content-evenly fs-6 px-md-3 px-lg-5 text-uppercase fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link purple {% if request.path == team %}pink{% endif %} text-center" aria-current="page" href="{% url 'team' %}">{% trans "The team" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link purple {% if request.path == expertise %}pink{% endif %} text-center" href="{% url 'expertise' %}">{% trans "Expertise" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link purple {% if request.path == ai %}pink{% endif %} text-center" href="{% url 'our ai' %}">{% trans "Our A.I." %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link purple {% if request.path == serenicia %}pink{% endif %} text-center" href="{% url 'serenicia' %}">{% trans "Serenicia" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link purple {% if request.path == contact %}pink{% endif %} text-center" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<script>
+
+    var navbar = document.getElementById('navbar');
+
+    window.onscroll = function () { 
+        if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100  ) {
+            navbar.classList.add("navbarbox");
+        } 
+        else {
+            navbar.classList.remove("navbarbox");
+        }
+    };
+
+</script>

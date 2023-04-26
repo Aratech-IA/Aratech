@@ -1,0 +1,634 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-07 15:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Aratech/settings.py:123 Aratech/settings_base.py:120
+msgid "English"
+msgstr "Anglais"
+
+#: Aratech/settings.py:124 Aratech/settings_base.py:121
+msgid "French"
+msgstr "Français"
+
+#: app0_base/templates/app0_base/ai.html:6
+#: app0_base/templates/app0_base/contact.html:6
+#: app0_base/templates/app0_base/expertise.html:6
+#: app0_base/templates/app0_base/index.html:6
+#: app0_base/templates/app0_base/legalnotice.html:6
+#: app0_base/templates/app0_base/serenicia.html:7
+#: app0_base/templates/app0_base/team.html:6
+msgid "Background image"
+msgstr "Image d'arrière plan"
+
+#: app0_base/templates/app0_base/ai.html:14
+msgid "A powerful A.I."
+msgstr "Une I.A. performante"
+
+#: app0_base/templates/app0_base/ai.html:16
+msgid "Facial recognition"
+msgstr "Reconnaissance faciale"
+
+#: app0_base/templates/app0_base/ai.html:17
+msgid "objects, defects, sounds"
+msgstr "d'objets, de défauts, de sons"
+
+#: app0_base/templates/app0_base/ai.html:18
+msgid "everything is possible with"
+msgstr "tout est possible avec"
+
+#: app0_base/templates/app0_base/contact.html:14
+msgid "A question, we project, curiosity"
+msgstr "Une question, un projet, de la curiosité"
+
+#: app0_base/templates/app0_base/contact.html:15
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: app0_base/templates/app0_base/contact.html:31
+#: app0_base/templates/app0_base/contact.html:72
+msgid "Send"
+msgstr "Envoyer"
+
+#: app0_base/templates/app0_base/contact.html:37
+msgid "Name"
+msgstr "Nom"
+
+#: app0_base/templates/app0_base/contact.html:41
+msgid "First name"
+msgstr "Prénom"
+
+#: app0_base/templates/app0_base/contact.html:49
+#: app0_base/templates/app0_base/legalnotice.html:51
+msgid "Phone"
+msgstr "Téléphone"
+
+#: app0_base/templates/app0_base/contact.html:53
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: app0_base/templates/app0_base/contact.html:60
+msgid "Subject"
+msgstr "Sujet"
+
+#: app0_base/templates/app0_base/contact.html:66
+msgid "Message"
+msgstr "Message"
+
+#: app0_base/templates/app0_base/contact.html:77
+msgid ""
+"By submitting this form, I accept that the information entered will be used "
+"as part of the contact request. For more information, please see our"
+msgstr ""
+"En soumettant ce formulaire, j'accepte que les informations saisies soient "
+"exploitées dans le cadre de la demande de contact. Pour plus d'informations, "
+"veuillez consulter nos"
+
+#: app0_base/templates/app0_base/contact.html:77
+#: app0_base/templates/app0_base/legalnotice.html:14
+msgid "Legal notice"
+msgstr "Mentions légales"
+
+#: app0_base/templates/app0_base/contact.html:78
+msgid ""
+"In accordance with article L.223-2 of the Consumer Code, we inform you of "
+"the existence of the list of opposition to canvassing « Bloctel », on which "
+"you can register"
+msgstr ""
+"Conformément à l'article L.223-2 du Code de la consommation, nous vous "
+"informons de l'existence de la liste d'opposition au démarchage « Bloctel », "
+"sur laquelle vous pouvez vous inscrire"
+
+#: app0_base/templates/app0_base/expertise.html:14
+msgid "A tailor-made app"
+msgstr "Une application sur-mesure"
+
+#: app0_base/templates/app0_base/expertise.html:16
+msgid "Code / A.I."
+msgstr "Code / I.A."
+
+#: app0_base/templates/app0_base/expertise.html:17
+msgid "You have an idea"
+msgstr "Vous avez une idée"
+
+#: app0_base/templates/app0_base/expertise.html:17
+msgid "a project"
+msgstr "un projet"
+
+#: app0_base/templates/app0_base/expertise.html:18
+msgid "we have the skills"
+msgstr "nous avons les compétences"
+
+#: app0_base/templates/app0_base/expertise.html:24
+msgid "We develop your product with our experience"
+msgstr "Nous développons votre produit avec notre expérience"
+
+#: app0_base/templates/app0_base/expertise.html:26
+msgid "The basic idea is to save you time and make your daily life easier"
+msgstr ""
+"L'idée de base est de vous faire gagner du temps et de faciliter votre "
+"quotidien"
+
+#: app0_base/templates/app0_base/expertise.html:27
+msgid "To achieve this goal, there will be several steps"
+msgstr "Pour atteindre cet objectif, il y aura plusieurs étapes"
+
+#: app0_base/templates/app0_base/expertise.html:29
+msgid "We discuss your project"
+msgstr "Nous discutons de votre projet"
+
+#: app0_base/templates/app0_base/expertise.html:30
+msgid ""
+"We offer you a model that will give you a good idea of what the application "
+"will do. This step can be done by yourself if you prefer"
+msgstr ""
+"Nous vous proposons une maquette qui vous donnera une bonne idée de ce que "
+"fera l'application. Cette étape peut être effectuée par vous-même si vous "
+"préférez"
+
+#: app0_base/templates/app0_base/expertise.html:31
+msgid ""
+"Once we have reached an agreement, our developers and A.I. researcher get to "
+"work to create the application and its functionalities"
+msgstr ""
+"Une fois que nous sommes parvenus à un accord, nos développeurs et chercheur "
+"I.A. se mettent au travail pour créer l'application et ses fonctionnalités"
+
+#: app0_base/templates/app0_base/expertise.html:32
+msgid ""
+"Finally comes the testing phase. Your feedback will be essential to improve "
+"the application and add new features"
+msgstr ""
+"Vient enfin la phase de test. Vos retours d'expérience seront essentiels "
+"pour améliorer l'application et ajouter de nouvelles fonctionnalités"
+
+#: app0_base/templates/app0_base/expertise.html:35
+msgid ""
+"We are a small team, which allows us to all know the company's projects and "
+"to be very responsive"
+msgstr ""
+"Nous sommes une petite équipe, ce qui nous permet de connaître tous les "
+"projets de l'entreprise et d'être très réactifs"
+
+#: app0_base/templates/app0_base/footer.html:5
+msgid "Footer"
+msgstr "Bas de page"
+
+#: app0_base/templates/app0_base/footer.html:21
+#: app0_base/templates/app0_base/header.html:46
+msgid "The team"
+msgstr "L'équipe"
+
+#: app0_base/templates/app0_base/footer.html:24
+#: app0_base/templates/app0_base/header.html:49
+msgid "Expertise"
+msgstr "Savoir-faire"
+
+#: app0_base/templates/app0_base/footer.html:27
+#: app0_base/templates/app0_base/header.html:52
+msgid "Our A.I."
+msgstr "Notre I.A."
+
+#: app0_base/templates/app0_base/footer.html:30
+#: app0_base/templates/app0_base/header.html:55
+msgid "Serenicia"
+msgstr "Sérénicia"
+
+#: app0_base/templates/app0_base/footer.html:33
+#: app0_base/templates/app0_base/header.html:58
+msgid "Contact"
+msgstr "Contact"
+
+#: app0_base/templates/app0_base/footer.html:41
+msgid "A project"
+msgstr "Un projet"
+
+#: app0_base/templates/app0_base/footer.html:43
+msgid "Let's discuss it"
+msgstr "Discutons-en"
+
+#: app0_base/templates/app0_base/header.html:13
+msgid "Header"
+msgstr "Entête"
+
+#: app0_base/templates/app0_base/index.html:15
+msgid "Developer of applications containing Artificial Intelligence"
+msgstr "Développeur d'applications contenant de l'Intelligence Artificielle"
+
+#: app0_base/templates/app0_base/index.html:17
+msgid "A need for A.I."
+msgstr "Un besoin d'I.A."
+
+#: app0_base/templates/app0_base/index.html:18
+msgid "An app project"
+msgstr "Un projet d'application"
+
+#: app0_base/templates/app0_base/index.html:20
+msgid "Let's talk about it"
+msgstr "Parlons-en"
+
+#: app0_base/templates/app0_base/index.html:25
+msgid ""
+"Simplify your life with our Artificial Intelligence and/or a tailor-made "
+"application"
+msgstr ""
+"Simplifiez-vous la vie avec notre Intelligence Artificielle et/ou une "
+"application sur-mesure"
+
+#: app0_base/templates/app0_base/legalnotice.html:21
+msgid "is a registered trademark"
+msgstr "est une marque déposée"
+
+#: app0_base/templates/app0_base/legalnotice.html:22
+msgid ""
+"In accordance with the Data Protection Act of January 6, 1978, the website "
+"www.aratech.fr is declared to the CNIL under number 4932479"
+msgstr ""
+"Conformément à la loi Informatique et Libertés du 6 janvier 1978, le site "
+"Internet www.aratech.fr est déclarés à la CNIL sous le numéro 4932479"
+
+#: app0_base/templates/app0_base/legalnotice.html:25
+msgid "Site editor"
+msgstr "Editeur du site"
+
+#: app0_base/templates/app0_base/legalnotice.html:39
+msgid "Site host"
+msgstr "Hébergeur du site"
+
+#: app0_base/templates/app0_base/legalnotice.html:45
+msgid "consumer mediator"
+msgstr "Médiateur à la consommation"
+
+#: app0_base/templates/app0_base/legalnotice.html:46
+msgid ""
+"Any consumer has the right to have recourse to a consumer mediator for the "
+"amicable resolution of the dispute between him and a professional"
+msgstr ""
+"Tout consommateur a le droit de recourir à un médiateur de la consommation "
+"en vue de la résolution amiable du litige qui l’oppose à un professionnel"
+
+#: app0_base/templates/app0_base/legalnotice.html:47
+msgid "The use of the consumer mediator is free for the subscriber at home"
+msgstr ""
+"Le recours au médiateur à la consommation est gratuit pour l'abonné à "
+"domicile"
+
+#: app0_base/templates/app0_base/legalnotice.html:48
+msgid "The contact details of the consumer mediator are"
+msgstr "Les coordonnées du médiateur à la consommation sont"
+
+#: app0_base/templates/app0_base/legalnotice.html:49
+msgid "Web address"
+msgstr "Adresse web"
+
+#: app0_base/templates/app0_base/legalnotice.html:50
+msgid "Address"
+msgstr "Adresse postale"
+
+#: app0_base/templates/app0_base/legalnotice.html:53
+msgid "Copyright"
+msgstr "Copyright"
+
+#: app0_base/templates/app0_base/legalnotice.html:54
+msgid ""
+"The general structure, texts, photography, sounds, video sequences, graphics "
+"and any other component of the SITE are the exclusive property of ARATECH or "
+"its partners. The entire SITE is subject to French and international "
+"legislation on copyright and intellectual property."
+msgstr ""
+"La structure générale, les textes, photographie, sons, séquences vidéos, "
+"graphismes et tout autre élément composant le SITE sont la propriété "
+"exclusive de la société ARATECH ou de ses partenaires. L’ensemble du SITE "
+"relève de la législation française et internationale sur les droits d’auteur "
+"et de la propriété intellectuelle"
+
+#: app0_base/templates/app0_base/legalnotice.html:55
+msgid ""
+"Any use or reproduction, total or partial, of the SITE, of the elements "
+"which compose it and/or of the information which appears there, by any "
+"process whatsoever, without the authorization of the holder of the rights to "
+"these elements, will be immediately prosecuted, either in the context of an "
+"action for infringement, or in the context of an action for unfair "
+"competition"
+msgstr ""
+"Toute utilisation ou reproduction, totale ou partielle, du SITE, des "
+"éléments qui le composent et/ou des informations qui y figurent, par quelque "
+"procédé que ce soit, sans l’autorisation du titulaire du droit sur ces "
+"éléments, sera immédiatement poursuivi, soit dans le cadre d’une action en "
+"contrefaçon, soit dans le cadre d’une action en concurrence déloyale"
+
+#: app0_base/templates/app0_base/legalnotice.html:57
+msgid "Hypertext links"
+msgstr "Liens hypertextes"
+
+#: app0_base/templates/app0_base/legalnotice.html:58
+msgid ""
+"authorizes any website to establish a link pointing to all or part of the "
+"site, subject to the legal provisions in force, the COMPANY reserving the "
+"right, at any time, without notice and without having to justify its "
+"decision, to prohibit this link"
+msgstr ""
+"autorise tout site Internet à établir un lien pointant vers tout ou partie "
+"du site, sous réserve des dispositions légales en vigueur, la SOCIÉTÉ se "
+"réservant le droit, à tout moment, sans préavis et sans avoir à motiver sa "
+"décision, d’interdire ce lien"
+
+#: app0_base/templates/app0_base/legalnotice.html:61
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: app0_base/templates/app0_base/legalnotice.html:62
+msgid ""
+"The website www.aratech.fr is committed to respecting the privacy of users "
+"and the confidentiality of their personal data when browsing the site"
+msgstr ""
+"Le site internet www.aratech.fr s’engage à respecter la vie privée des "
+"utilisateurs et la confidentialité de leurs données personnelles lors de "
+"leur navigation sur le site"
+
+#: app0_base/templates/app0_base/legalnotice.html:64
+msgid "Collection of Personal Data"
+msgstr "Collecte des Données Personnelles"
+
+#: app0_base/templates/app0_base/legalnotice.html:65
+msgid "Data may be collected when the user completes a contact questionnaire"
+msgstr ""
+"Des données peuvent être collectée lorsque l’utilisateur complète un "
+"questionnaire de contact"
+
+#: app0_base/templates/app0_base/legalnotice.html:67
+msgid "Cookies"
+msgstr "Cookies"
+
+#: app0_base/templates/app0_base/legalnotice.html:68
+msgid "This site does not use cookies"
+msgstr "Ce site n'utilise pas de cookies"
+
+#: app0_base/templates/app0_base/serenicia.html:18
+msgid "The application for the social<br>management of nursing homes"
+msgstr "L'application pour la gestion<br>sociale des EHPAD"
+
+#: app0_base/templates/app0_base/serenicia.html:32
+#: app0_base/templates/app0_base/serenicia.html:128
+msgid "Messaging"
+msgstr "Messagerie"
+
+#: app0_base/templates/app0_base/serenicia.html:32
+#: app0_base/templates/app0_base/serenicia.html:128
+msgid "Blog"
+msgstr "Blog"
+
+#: app0_base/templates/app0_base/serenicia.html:45
+msgid "Care"
+msgstr "Soins"
+
+#: app0_base/templates/app0_base/serenicia.html:58
+msgid "Activities"
+msgstr "Activités"
+
+#: app0_base/templates/app0_base/serenicia.html:73
+msgid "Communication"
+msgstr "Communication"
+
+#: app0_base/templates/app0_base/serenicia.html:73
+msgid "with family"
+msgstr "avec la famille"
+
+#: app0_base/templates/app0_base/serenicia.html:86
+msgid "Menu management"
+msgstr "Gestion menus"
+
+#: app0_base/templates/app0_base/serenicia.html:86
+msgid "Meal evaluation"
+msgstr "Évaluation repas"
+
+#: app0_base/templates/app0_base/serenicia.html:99
+msgid "Real-time<br>information"
+msgstr "Informations<br>en temps réel"
+
+#: app0_base/templates/app0_base/serenicia.html:110
+msgid ""
+"Serenicia is a solution for communication and coordination between the "
+"various actors involved in the lives of residents of an EHPAD, such as "
+"members of the nursing staff, families and doctors."
+msgstr ""
+"Sérénicia est une solution de communication et de coordination entre les "
+"différents acteurs impliqués dans la vie des résidents d'un EHPAD, tels que "
+"les membres du personnel soignant, les familles et les médecins."
+
+#: app0_base/templates/app0_base/serenicia.html:111
+msgid ""
+"The application offers several functionalities, such as the management of "
+"care, activities, meals or communication with families. It also makes it "
+"possible to share important information in real time, so as to facilitate "
+"coordination between the various stakeholders and improve the quality of "
+"care provided to residents. Families, when it comes to it, will appreciate "
+"the transparency that is brought to them."
+msgstr ""
+"L'application offre plusieurs fonctionnalités, telles que la gestion des "
+"soins, des activités ou des repas et la communication avec les familles. "
+"Elle permet également de partager des informations importantes en temps "
+"réel, de manière à faciliter la coordination entre les différents "
+"intervenants et à améliorer la qualité des soins prodigués aux résidents. "
+"Les familles, quand à elle, apprécieront la transparence qui leur est "
+"apporté."
+
+#: app0_base/templates/app0_base/serenicia.html:112
+msgid ""
+"Serenicia is an innovative solution that meets the specific needs of EHPADs, "
+"and which contributes to improving the quality of life of residents, by "
+"promoting adapted and personalized care."
+msgstr ""
+"Sérénicia est une solution innovante qui répond aux besoins spécifiques des "
+"EHPAD, et qui contribue à améliorer la qualité de vie des résidents, en "
+"favorisant une prise en charge adaptée et personnalisée."
+
+#: app0_base/templates/app0_base/serenicia.html:130
+msgid ""
+"Messaging makes it possible to communicate with the various stakeholders "
+"involved in resident care, such as nursing staff, doctors and families. It "
+"thus makes it possible to facilitate coordination between the various "
+"actors, to transmit important information and to respond quickly to "
+"questions and concerns."
+msgstr ""
+"La messagerie permet de communiquer avec les différents intervenants "
+"impliqués dans les soins aux résidents, tels que le personnel soignant, les "
+"médecins et les familles. Elle permet ainsi de faciliter la coordination "
+"entre les différents acteurs, de transmettre des informations importantes et "
+"de répondre rapidement aux questions et aux préoccupations."
+
+#: app0_base/templates/app0_base/serenicia.html:131
+msgid ""
+"As for the blog, it makes it possible to share information on the activities "
+"offered to residents, important events of the EHPAD, ongoing projects, etc."
+msgstr ""
+"Quant au blog, il permet de partager des informations sur les activités "
+"proposées aux résidents, les événements importants de l'EHPAD, les projets "
+"en cours, etc."
+
+#: app0_base/templates/app0_base/serenicia.html:162
+msgid "Management of care and activities"
+msgstr "Gestion des soins et des activités"
+
+#: app0_base/templates/app0_base/serenicia.html:164
+msgid ""
+"This functionality makes it possible to manage the care and daily activities "
+"of EHPAD residents. In particular, it makes it possible to monitor drug "
+"treatments, medical visits, nursing care and leisure activities offered to "
+"residents."
+msgstr ""
+"Cette fonctionnalité permet de gérer les soins et les activités quotidiennes "
+"des résidents de l'EHPAD. Elle permet notamment de suivre les traitements "
+"médicamenteux, les visites médicales, les soins infirmiers et les activités "
+"de loisirs proposées aux résidents."
+
+#: app0_base/templates/app0_base/serenicia.html:185
+msgid "Communication with family"
+msgstr "Communication avec la famille"
+
+#: app0_base/templates/app0_base/serenicia.html:187
+msgid ""
+"This feature allows you to communicate with the families of the residents, "
+"by providing them with information on the state of health of their loved "
+"one, the activities offered and the important events of the EHPAD."
+msgstr ""
+"Cette fonctionnalité permet de communiquer avec les familles des résidents, "
+"en leur fournissant des informations sur l'état de santé de leur proche, les "
+"activités proposées et les événements importants de l'EHPAD."
+
+#: app0_base/templates/app0_base/serenicia.html:188
+msgid "It also allows you to share photos and videos of residents."
+msgstr ""
+"Elle permet également de partager des photos et des vidéos des résidents."
+
+#: app0_base/templates/app0_base/serenicia.html:209
+msgid "Menu and meal management"
+msgstr "Gestion des menus et des repas"
+
+#: app0_base/templates/app0_base/serenicia.html:211
+msgid ""
+"This functionality makes it possible to manage residents' menus and meals, "
+"taking into account their food preferences and specific diets."
+msgstr ""
+"Cette fonctionnalité permet de gérer les menus et les repas des résidents, "
+"en prenant en compte leurs préférences alimentaires et leurs régimes "
+"spécifiques."
+
+#: app0_base/templates/app0_base/serenicia.html:212
+msgid ""
+"It also gives residents, families or employees the possibility of noting "
+"meals, which gives valuable information to the chef..."
+msgstr ""
+"Elle donne aussi la possibilité aux résidents, familles ou employés de noter "
+"les repas, ce qui donne de précieuses informations au chef..."
+
+#: app0_base/templates/app0_base/serenicia.html:233
+msgid "Real-time information sharing"
+msgstr "Partage d'informations en temps réel"
+
+#: app0_base/templates/app0_base/serenicia.html:235
+msgid ""
+"This functionality makes it possible to share important information in real "
+"time between the various participants in the EHPAD, such as the nursing "
+"staff, the doctors and the families."
+msgstr ""
+"Cette fonctionnalité permet de partager des informations importantes en "
+"temps réel entre les différents intervenants de l'EHPAD, tels que le "
+"personnel soignant, les médecins et les familles."
+
+#: app0_base/templates/app0_base/serenicia.html:236
+msgid ""
+"It thus makes it possible to facilitate coordination between the various "
+"actors involved in the care of residents."
+msgstr ""
+"Elle permet ainsi de faciliter la coordination entre les différents acteurs "
+"impliqués dans les soins aux résidents."
+
+#: app0_base/templates/app0_base/team.html:14
+msgid "Your project in good hands"
+msgstr "Votre projet entre de bonnes mains"
+
+#: app0_base/templates/app0_base/team.html:16
+msgid "A responsive agency"
+msgstr "Une agence réactive"
+
+#: app0_base/templates/app0_base/team.html:17
+msgid ""
+"Complementary skills and interpersonal skills <br> are the great secrets of "
+"our agency"
+msgstr ""
+"Compétences complémentaires et savoir-être <br> sont les grands secrets de "
+"notre agence"
+
+#: app0_base/templates/app0_base/team.html:23
+msgid ""
+"Associated in the creation of the agency, they provide clients with all "
+"their experience"
+msgstr ""
+"Associés à la création de l'agence, ils mettent à disposition des clients "
+"toutes leurs expériences"
+
+#: app0_base/templates/app0_base/team.html:31
+msgid "A.I. researcher"
+msgstr "Chercheur en I.A. "
+
+#: app0_base/templates/app0_base/team.html:34
+msgid ""
+"Doctor and researcher in A.I., he remains on constant watch to bring to his "
+"research the best"
+msgstr ""
+"Docteur et Chercheur en I.A., il reste en veille constante pour apporter à "
+"ses recherches le meilleur"
+
+#: app0_base/templates/app0_base/team.html:35
+msgid ""
+"When he is not looking, he plays tennis at a high level. Finally as high as "
+"his ever-increasing age allows"
+msgstr ""
+"Quand il ne cherche pas, il joue au tennis à haut niveau. Enfin aussi haut "
+"que son âge en constante augmentation le lui permet"
+
+#: app0_base/templates/app0_base/team.html:43
+#: app0_base/templates/app0_base/team.html:54
+msgid "Developer"
+msgstr "Développeur"
+
+#: app0_base/templates/app0_base/team.html:46
+msgid ""
+"Complete developer, when he is not hands in the grease to repair his car, "
+"motorcycle, that of his wife or the neighbor, he likes to secure the "
+"applications and to resume his code to improve it"
+msgstr ""
+"Développeur complet, quand il n'a pas les mains dans le camboui pour réparer "
+"sa voiture, sa moto, celle de sa femme ou du voisin, il aime sécuriser les "
+"applications et reprendre son code pour l'améliorer"
+
+#: app0_base/templates/app0_base/team.html:57
+msgid ""
+"Developer, he likes to rack his brains to make modern and easy-to-use "
+"applications"
+msgstr ""
+"Développeur, il aime se creuser la tête pour faire des applications modernes "
+"et simples d'utilisation"
+
+#: app0_base/templates/app0_base/team.html:58
+msgid ""
+"Drummer, Hockey player, you can also meet him on his mountain bike or at the "
+"cinema"
+msgstr ""
+"Batteur, Hockeyeur, vous pourrez aussi le croiser sur son VTT ou au cinéma"

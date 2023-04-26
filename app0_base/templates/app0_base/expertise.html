@@ -1,0 +1,42 @@
+{% extends "app0_base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block imagefond %}
+<img src="{% static 'app0_base/img/savoir-faire_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+{% endblock imagefond %}
+
+
+{% block content %}
+
+<!-- Page Savoir-faire -->
+<div>
+    <h1 class="text-end py-md-5 my-5 pe-2 pe-md-5 purple text-uppercase">{% trans "A tailor-made app" %} !</h1>
+    <div class="p-2 p-md-5 pink">
+        <h1 class="text-center pt-md-5 mt-5">{% trans "Code / A.I." %}</h1>
+        <h1 class="text-center">{% trans "You have an idea" %}, {% trans "a project" %},</h1>
+        <h1 class="text-center mb-5">{% trans "we have the skills" %}.</h1>
+    </div>
+</div>
+
+<!-- Explications -->
+<div class="decalage_page bg-grey">
+    <h5 class="text-center py-4 px-3 px-md-5">{% trans "We develop your product with our experience" %}</h5>
+    <div class="px-2 px-md-5">
+        <h6>{% trans "The basic idea is to save you time and make your daily life easier" %}.</h6>
+        <h6 class="mb-3">{% trans "To achieve this goal, there will be several steps" %} :</h6>
+        <ul class="liste list-group list-group-numbered fs-6 px-3 px-md-5">
+            <li class="list-group-item">{% trans "We discuss your project" %}</li>
+            <li class="list-group-item">{% trans "We offer you a model that will give you a good idea of what the application will do. This step can be done by yourself if you prefer" %}.</li>
+            <li class="list-group-item">{% trans "Once we have reached an agreement, our developers and A.I. researcher get to work to create the application and its functionalities" %}.</li>
+            <li class="list-group-item">{% trans "Finally comes the testing phase. Your feedback will be essential to improve the application and add new features" %}.</li>
+        </ul>
+    </div>
+    <h5 class="text-center py-4 px-2 px-md-5">{% trans "We are a small team, which allows us to all know the company's projects and to be very responsive" %}.</h5>
+
+
+    {% include 'app0_base/footer.html' %}
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends "app0_base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block imagefond %}
+<img src="{% static 'app0_base/img/IA_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+{% endblock imagefond %}
+
+
+{% block content %}
+
+<!-- Page I.A. -->
+<div>
+    <h1 class="text-end py-md-5 my-5 pe-2 pe-md-5 purple text-uppercase">{% trans "A powerful A.I." %} !</h1>
+    <div class="p-2 p-md-5 pink">
+        <h1 class="text-center mt-md-5">{% trans "Facial recognition" %},</h1>
+        <h1 class="text-center">{% trans "objects, defects, sounds" %},</h1>
+        <h1 class="text-center">{% trans "everything is possible with" %}</h1>
+        <h1 class="text-center">ARATECH !</h1>
+    </div>
+</div>
+
+<!-- Explications -->
+<div class="decalage_page bg-grey">
+    <h5 class="text-center py-4 px-3 px-md-5">A expliquer :</h5>
+    <div class="px-3 px-md-5 py-3">
+        <p>Service IA gratuit à la demande parmis notre offre standard ou développement personnalisé sur demande.</p>
+        <p>Avec des exemples + Lien vers le github</p>
+        <p>Open source aussi...</p>
+    </div>
+    <h5 class="text-center py-4 px-3 px-md-5">A FINIR !!</h5>
+
+
+    {% include 'app0_base/footer.html' %}
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $font-size;
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        font-size: $font-size-medium;
+    }
+
+    @media screen and (min-width: $desktops-media-rupture) {
+        font-size: $font-size-large;
+    }
+}
+
+body, #navbar {
+    max-width: 1920px;
+}
+
+p {
+    margin-bottom: 0;
+    line-height: normal;
+    font-size: 0.9em;
+}
+  
+a {
+  text-decoration: none !important;
+  line-height: normal;
+
+  &:hover {
+      color: $blue !important;
+  }
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.bg-purple {
+    background-color: $bg-purple !important;
+}
+
+.bg-blue {
+    background-color: $bg-blue !important;
+}
+
+.bg-pink {
+    background-color: $bg-pink !important;;
+}
+
+.bg-grey {
+    background-color: $bg-grey !important;;
+}
+
+.bg-white {
+    background-color: $bg-white !important;;
+}
+
+.bg-lightblue {
+    background-color: $lightblue !important;;
+}
+
+.bg-darkblue {
+    background-color: $darkblue !important;;
+}
+
+.purple {
+    color: $purple !important;
+}
+
+.blue {
+    color: $blue !important;
+}
+
+.pink {
+    color: $pink !important;
+}
+
+.white {
+    color: $white !important;
+}
+
+.lightblue {
+    color: $lightblue !important;
+}
+
+.darkblue {
+    color: $darkblue !important;
+}
+
+.border-purple {
+    border-color: $purple !important;
+}
+
+.border-blue {
+    border-color: $blue !important;
+}
+
+.border-pink {
+    border-color: $pink !important;
+}
+
+.table-purple {
+    background-color: $purple !important;
+}
+
+.border-lightblue {
+    border-color: $lightblue !important;
+}
+
+.border-darkblue {
+    border-color: $darkblue !important;
+}
+
+.btn-perso {
+    background-color: $purple;
+    border-color: $black;
+    color: $white;
+    border-radius: 0.45em;
+    padding: 0.2em 0.5em;
+
+    &:hover {
+        background-color: $white;
+        color: $purple;
+    }
+}
+
+.fs-7 {
+    font-size: 0.85em;
+}
+
+.decalage_page {
+    top: 0;
+    width: 100%;
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        position: absolute;
+        margin-top: 100vh;
+    }
+}
+
+.image-fond {
+    background-size: cover;
+    opacity: 0.12;
+    height: 100vh;
+    z-index: -10;
+
+    @media screen and (min-width: $fix-media-rupture) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,87 @@
+{% extends "app0_base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block imagefond %}
+<img src="{% static 'app0_base/img/contact_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond image-fond-contact position-absolute">
+{% endblock imagefond %}
+
+
+{% block content %}
+
+<!-- Page contact -->
+<div class="intro_contact_page">
+    <h2 class="text-center white">{% trans "A question, we project, curiosity" %} ?</h2>
+    <h1 class="text-center white">{% trans "Contact us" %} !</h1>
+    <div class="pink pe-md-5 pb-5">
+        <h1 class="text-center">00 00 00 00 00</h1>
+        <h1 class="text-center">contact@aratech.fr</h1>
+    </div>
+</div>
+
+<!-- Formulaire -->
+<div class="contact_page decalage_page bg-grey">
+    <div class="d-flex flex-column align-items-center">
+        <form class="contact-form p-4 p-sm-5" method="post">
+
+            {% csrf_token %}
+            <!-- {{ form.as_p }}
+
+            <div class="form-actions">
+                <button type="submit">{% trans "Send" %}</button>
+            </div> -->
+    
+            <!-- Nom prénom -->
+            <div class="d-flex flex-column flex-sm-row">
+                <div>
+                    <p>{% trans "Name" %}</p>
+                    {{ form.name }}
+                </div>
+                <div class="ms-sm-auto">
+                    <p>{% trans "First name" %}</p>
+                    {{ form.firstname }}
+                </div>
+            </div>
+        
+            <!-- Téléphone Email -->
+            <div class="d-flex flex-column flex-sm-row">
+                <div>
+                    <p>{% trans "Phone" %}</p>
+                    {{ form.phone }}
+                </div>
+                <div class="ms-sm-auto">
+                    <p>{% trans "E-Mail" %}</p>
+                    {{ form.from_email }}
+                </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group mb-2 mb-md-4">
+                <p>{% trans "Subject" %}</p>
+                {{ form.subject }}
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+                <p>{% trans "Message" %}</p>
+                {{ form.message }}
+            </div>
+        
+            <!-- Send button -->
+            <div class="d-flex">
+                <button class="btn btn-perso text-end mt-4 mx-auto" type="submit">{% trans "Send" %}</button>
+            </div>
+            
+        </form>
+
+        <p class="bloctel pb-1 px-2 px-md-5">{% trans "By submitting this form, I accept that the information entered will be used as part of the contact request. For more information, please see our" %} <a href="{% url 'legal notice' %}"><u>{% trans "Legal notice" %}</u></a>.</p>
+        <p class="bloctel pb-5 px-2 px-md-5">{% trans "In accordance with article L.223-2 of the Consumer Code, we inform you of the existence of the list of opposition to canvassing « Bloctel », on which you can register" %} (https://conso.bloctel.fr/).</p>
+
+    </div>
+    
+
+    {% include 'app0_base/footer.html' %}
+
+</div>
+
+{% endblock content %} 

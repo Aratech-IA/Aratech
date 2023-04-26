@@ -1,0 +1,31 @@
+#navbar {
+    .show {
+        height: 100vh;
+    }
+}
+
+.navbar-brand {
+    img {
+        width: 9em;
+
+        @media screen and (min-width: $tablette-media-rupture) {
+            width: 12em;
+        }
+    }
+}
+
+.navbarbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    background-color: $grey;
+    opacity: 0.9;
+    box-shadow: 0 0 1.5em rgba(0,0,0,.5);
+    transition: 0.5s;
+
+    img {
+        width: 8em;
+    }
+}

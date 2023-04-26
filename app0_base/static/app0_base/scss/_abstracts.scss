@@ -1,0 +1,37 @@
+/* Déclaration des couleurs */
+$purple: rgb(96, 43, 140);
+$blue: rgb(47, 61, 145);
+$pink: rgb(171, 51, 138);
+$grey: rgb(211, 211, 211);
+$white: whitesmoke;
+$black: #000;
+// Couleurs sérénicia
+$lightblue: rgb(147, 169, 210);
+$darkblue: rgb(82, 133, 227);
+
+/* Attribution des couleurs */
+$bg-purple: $purple;
+$bg-blue: $blue;
+$bg-pink: $pink;
+$bg-grey: $grey;
+$bg-white: $white;
+
+/* Gestion des fonts */
+$font-size: 14px;
+$font-size-medium: 15.5px;
+$font-size-large: 17px;
+
+$font-familly-title: 'inter', sans-serif;
+$font-familly-content: 'open sans', sans-serif;
+$font-familly-fallback: 'Helvetica, Arial, sans-serif';
+
+/* Transitions */
+$transition-fast: 0.3s;
+$transition-medium: 0.5s;
+$transition-slow: 0.9s;
+
+/* Définition des breakpoints */
+$phone-media-rupture: 576px;
+$tablette-media-rupture: 768px;
+$desktops-media-rupture: 992px;
+$fix-media-rupture: 1200px;

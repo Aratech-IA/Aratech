@@ -1,0 +1,29 @@
+.index_page {
+    padding-top: 1em;
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        padding-top: 7em;
+    }
+
+    h2 {
+        @media screen and (min-width: $tablette-media-rupture) {
+            text-align: center;
+        }
+    }
+
+    .text1 {
+        width: 90%;
+
+        @media screen and (min-width: $tablette-media-rupture) {
+            width: 42%;
+        }
+    }
+
+    .text2 {
+        padding-top: 2.5em;
+
+        @media screen and (min-width: $tablette-media-rupture) {
+            padding-top: 5em;
+        }
+    }
+}
