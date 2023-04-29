@@ -1,1 +1,1 @@
-docker build --rm -t roboticia/aratech:$1 .
+docker build --rm -t aratechia/vitrine:$1 .
