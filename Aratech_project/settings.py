@@ -22,10 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+SECRET_KEY = os.getenv('SECRET_KEY', '7keyZtIlfzaXV9VO_OOX1blyjcDXr8Ef6Ycg7mXdbm4')
 
 # Application definition
 
@@ -51,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Aratech.urls'
+ROOT_URLCONF = 'Aratech_project.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +74,7 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
 
-WSGI_APPLICATION = 'Aratech.wsgi.application'
+# WSGI_APPLICATION = 'Aratech_project.wsgi.application'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

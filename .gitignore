@@ -138,6 +138,4 @@ app0_base/migrations/*
 .idea
 .idea/workspace.xml
 
-#settings
-Aratech/settings.py
 
