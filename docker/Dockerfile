@@ -9,6 +9,6 @@ RUN sed -i  '/config.should_reload:/a  \ \ \ \ \ \ \ \ server.force_exit = True'
 WORKDIR /App
 ADD "https://api.github.com/repos/aratech-IA/aratech/commits/main" latest_commit
 RUN git clone https://github.com/Aratech-IA/Aratech.git
-RUN cd Aratech && python manage.py collectstatic
+RUN cd Aratech && python manage.py collectstatic && python manage.py migrate
 
 CMD ["/App/Aratech/asgi.sh"]
