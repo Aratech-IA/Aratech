@@ -1,14 +1,19 @@
 .index_page {
+    height: 100vh;
     padding-top: 1em;
 
-    @media screen and (min-width: $tablette-media-rupture) {
-        padding-top: 7em;
-    }
+    // @media screen and (min-width: $tablette-media-rupture) {
+    //     padding-top: 7em;
+    // }
 
     h2 {
         @media screen and (min-width: $tablette-media-rupture) {
             text-align: center;
         }
+    }
+
+    .hauteur1 {
+        height: 30%;
     }
 
     .text1 {
@@ -19,11 +24,15 @@
         }
     }
 
-    .text2 {
-        padding-top: 2.5em;
-
-        @media screen and (min-width: $tablette-media-rupture) {
-            padding-top: 5em;
-        }
+    .hauteur2 {
+        height: 40%;
     }
+
+    // .text2 {
+    //     padding-top: 2.5em;
+
+    //     @media screen and (min-width: $tablette-media-rupture) {
+    //         padding-top: 5em;
+    //     }
+    // }
 }

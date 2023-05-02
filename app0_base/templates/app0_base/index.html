@@ -11,8 +11,10 @@
 
 <!-- Page index -->
 <div class="index_page">
-    <div class="d-md-flex justify-content-around px-2 px-md-0">
-        <h2 class="text1 pe-md-5 pb-4 pb-md-0">{% trans "Developer of applications containing Artificial Intelligence" %}</h2>
+    <div class="hauteur1 d-md-flex justify-content-around px-2 px-md-0">
+        <div class="text1 d-flex align-items-center">
+            <h2 class="pe-md-5 pb-4 pb-md-0">{% trans "Developer of applications containing Artificial Intelligence" %}</h2>
+        </div>
         <div class="d-flex flex-column justify-content-center align-items-end align-items-md-center">
             <h2 class="text-end">{% trans "A need for A.I." %} ?</h2>
             <h2 class="text-end">{% trans "An app project" %} ?</h2>
@@ -22,7 +24,10 @@
         </div>
     </div>
     
-    <h1 class="text2 pink w-75 mx-auto text-center">{% trans "Simplify your life with our Artificial Intelligence and/or a tailor-made application" %} !</h1>
+    <div class="hauteur2 w-75 d-flex justify-content-center align-items-center mx-auto text-center">
+        <h1 class="text2 pink">{% trans "Simplify your life with our Artificial Intelligence and/or a tailor-made application" %} !</h1>
+    </div>
+    
 </div>
 
 {% include 'app0_base/footer.html' %}
