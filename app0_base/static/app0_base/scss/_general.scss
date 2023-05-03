@@ -144,10 +144,15 @@ li {
     }
 }
 
-.image-fond {
-    background-size: cover;
-    opacity: 0.12;
+.img-fond {
     height: 100vh;
+    width: 100%;
+}
+
+.image-fond {
+    background-size: contain;
+    height: 100vh;
+    opacity: 0.12;
     z-index: -10;
 
     @media screen and (min-width: $fix-media-rupture) {

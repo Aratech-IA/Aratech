@@ -3,7 +3,9 @@
 {% load i18n %}
 
 {% block imagefond %}
-<img src="{% static 'app0_base/img/index_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+<div class="img-fond position-absolute">
+    <img src="{% static 'app0_base/img/index_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond">
+</div>
 {% endblock imagefond %}
 
 
