@@ -6,8 +6,7 @@ from .forms import ContactForm
 
 # Page Index
 def index(request):
-    
-    return render(request, 'app0_base/index.html', {"index" : True})
+    return render(request, 'app0_base/index.html', {"index": True})
 
 
 # Page Team
