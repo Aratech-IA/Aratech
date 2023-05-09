@@ -147,11 +147,13 @@ li {
 .img-fond {
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 .image-fond {
-    background-size: contain;
+    background-size: cover;
     height: 100vh;
+    // width: 100%;
     opacity: 0.12;
     z-index: -10;
 
