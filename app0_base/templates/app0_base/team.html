@@ -3,15 +3,16 @@
 {% load i18n %}
 
 {% block imagefond %}
-<img src="{% static 'app0_base/img/team_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+<img src="{% static 'app0_base/img/team_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute d-none d-md-block">
 {% endblock imagefond %}
 
 
 {% block content %}
 
 <!-- Page team -->
-<div>
-    <h1 class="intro_team_page text-end py-md-5 my-5 pe-2 pe-md-5 purple text-uppercase">{% trans "Your project in good hands" %}</h1>
+<div class="intro_page position-relative">
+    <img src="{% static 'app0_base/img/team_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute w-100 h-100 d-md-none">
+    <h1 class="text-end py-md-5 my-md-5 pe-2 pe-md-5 pt-3 pt-md-0 purple text-uppercase">{% trans "Your project in good hands" %}</h1>
     <div class="p-2 p-md-5 pink">
         <h1 class="text-center pt-md-5 mt-5">{% trans "A responsive agency" %}.</h1>
         <h1 class="text-center mb-5">{% trans "Complementary skills and interpersonal skills <br> are the great secrets of our agency" %}</h1>

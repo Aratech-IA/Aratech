@@ -4,21 +4,23 @@
 
 
 {% block imagefond %}
-    <img src="{% static 'app0_base/img/serenicia_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute">
+    <img src="{% static 'app0_base/img/serenicia_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute d-none d-md-block">
 {% endblock imagefond %}
 
 
 {% block content %}
 
 <!-- Page Sérénicia -->
-<div class="d-flex flex-column align-items-center pt-md-5 mt-3 mt-md-5">
-    <img src="{% static 'app0_base/img/logo_serenicia.svg' %}" class="navbar-brand-img" width="300em">
+<div class="intro_page intro_page_serenicia position-relative d-flex flex-column align-items-center">
+    <img src="{% static 'app0_base/img/serenicia_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute w-100 h-100 d-md-none">
 
-    <div class="pt-4 px-1 py-md-5 my-md-5 pink">
-        <h1 class="text-center mt-md-5 pt-md-5">{% trans "The application for the social<br>management of nursing homes" %}</h1>
+    <img src="{% static 'app0_base/img/logo_serenicia.svg' %}" class="navbar-brand-img pt-3 pt-md-0" width="300em">
+
+    <div class="hauteur pt-4 px-1 pink">
+        <h1 class="text-center">{% trans "The application for the social<br>management of nursing homes" %}</h1>
     </div>
 
-    <div class="fonctionnalites d-flex flex-column flex-sm-row justify-content-sm-evenly justify-content-md-center pt-4 pt-md-5 mt-md-5">
+    <div class="fonctionnalites d-flex flex-column flex-sm-row justify-content-sm-evenly justify-content-md-center pt-4">
         <div class="d-md-flex justify-content-evenly">
 
             <!-- Messagerie / Blog -->
@@ -222,7 +224,7 @@
         
         
         <!-- Informations en temps réel -->
-        <div>
+        <div class="pb-4">
             <div id="informations" class="fonctionnalite d-sm-flex mx-auto">
                 <div class="col-sm-6 d-flex justify-content-center align-items-center">
                     <div class="image border border-5 border-darkblue rounded-5 bg-grey m-2 m-md-4"></div>

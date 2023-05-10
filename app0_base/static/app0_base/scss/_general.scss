@@ -134,6 +134,25 @@ li {
     font-size: 0.85em;
 }
 
+.intro_page {
+    img::before {
+        height: 100%;
+
+        @media screen and (min-width: $phone-media-rupture) {
+            width: 100%;
+        }
+    }
+}
+
+.image-fond {
+    background-size: contain;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.12;
+    z-index: -10;
+}
+
 .decalage_page {
     top: 0;
     width: 100%;
@@ -141,23 +160,5 @@ li {
     @media screen and (min-width: $tablette-media-rupture) {
         position: absolute;
         margin-top: 100vh;
-    }
-}
-
-.img-fond {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-.image-fond {
-    background-size: cover;
-    height: 100vh;
-    // width: 100%;
-    opacity: 0.12;
-    z-index: -10;
-
-    @media screen and (min-width: $fix-media-rupture) {
-        width: 100%;
     }
 }

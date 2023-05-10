@@ -3,15 +3,16 @@
 {% load i18n %}
 
 {% block imagefond %}
-<img src="{% static 'app0_base/img/contact_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond image-fond-contact position-absolute">
+<img src="{% static 'app0_base/img/contact_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond image-fond-contact position-absolute d-none d-md-block">
 {% endblock imagefond %}
 
 
 {% block content %}
 
 <!-- Page contact -->
-<div class="intro_contact_page">
-    <h2 class="text-center white">{% trans "A question, we project, curiosity" %} ?</h2>
+<div class="intro_contact_page position-relative">
+    <img src="{% static 'app0_base/img/contact_back.jpg' %}" alt="{% trans 'Background image' %}" class="image-fond position-absolute w-100 h-100 d-md-none">
+    <h2 class="text-center white pt-3 pt-md-0">{% trans "A question, we project, curiosity" %} ?</h2>
     <h1 class="text-center white">{% trans "Contact us" %} !</h1>
     <div class="pink pe-md-5 pb-5">
         <!-- <h1 class="text-center">00 00 00 00 00</h1> -->
