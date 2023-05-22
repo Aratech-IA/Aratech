@@ -1,5 +1,9 @@
 .image-fond-contact {
-    opacity: 0.9 !important;
+    opacity: 0.2 !important;
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        opacity: 0.9 !important;
+    }
 }
 
 .navbarcontact {

@@ -134,6 +134,10 @@ li {
     font-size: 0.85em;
 }
 
+.indexx {
+    overflow: hidden;
+}
+
 .intro_page {
     img::before {
         height: 100%;
@@ -150,7 +154,7 @@ li {
     width: 100%;
     overflow: hidden;
     opacity: 0.12;
-    z-index: -10;
+    z-index: -100;
 }
 
 .decalage_page {

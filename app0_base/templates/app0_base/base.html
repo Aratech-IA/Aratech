@@ -3,6 +3,8 @@
 {% load static %}
 {% load i18n %}
 
+{% url 'index' as index %}
+
 
 <html>
 
@@ -21,7 +23,7 @@
 </head>
 
 
-<body id="index" class="bg-white position-relative mx-auto">
+<body class="bg-white position-relative mx-auto {% if request.path == index %}indexx{% endif %}">
 
     {% block imagefond %}{% endblock imagefond %}
 
