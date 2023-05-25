@@ -1,12 +1,13 @@
 {% load static %}
 {% load i18n %}
 
+
 <head>
     <title>{% trans 'Footer' %}</title>
 </head>
 
 
-<footer class="{% if index %}fixed-bottom{% endif %} d-flex justify-content-around justify-content-md-evenly align-items-center bg-grey fs-7 py-2">
+<footer class="{% if request.path == index %}fixed-bottom{% endif %} d-flex justify-content-around justify-content-md-evenly align-items-center bg-grey fs-7 py-2">
     <div class="entreprise d-flex flex-column align-items-center">
         <!-- Logo de la société -->
         <a class="text-uppercase font-weight-bold p-0 m-0 pb-1" href="{% url 'index' %}">

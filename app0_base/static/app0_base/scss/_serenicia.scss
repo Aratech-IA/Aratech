@@ -1,3 +1,24 @@
+@media screen and (min-width: $tablette-media-rupture) {
+    .intro_page_serenicia {
+        height: 100vh;
+    
+        .navbar-brand-img {
+            height: 28%;
+        }
+    
+        .hauteur {
+            height: 32%;
+        }
+    
+        .fonctionnalites {
+            height: 30%;
+        }
+    }
+}
+
+
+
+
 .fonctionnalites {
     p {
         font-size: 1.1em;

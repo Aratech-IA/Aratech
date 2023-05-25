@@ -1,5 +1,9 @@
 .image-fond-contact {
-    opacity: 0.9 !important;
+    opacity: 0.2 !important;
+
+    @media screen and (min-width: $tablette-media-rupture) {
+        opacity: 0.9 !important;
+    }
 }
 
 .navbarcontact {
@@ -12,7 +16,7 @@
 }
 
 .intro_contact_page {
-    padding-top: 6em;
+    padding-top: 5.6em;
 
     @media screen and (min-width: $tablette-media-rupture) {
         padding-top: 9em;
@@ -30,7 +34,7 @@
 
 .contact-form {
     width: 100%;
-    
+
     @media screen and (min-width: $tablette-media-rupture) {
         width: 80% !important;
     }
