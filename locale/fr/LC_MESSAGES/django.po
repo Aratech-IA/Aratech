@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-07 15:17+0200\n"
+"POT-Creation-Date: 2023-06-06 15:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: Aratech/settings.py:123 Aratech/settings_base.py:120
+#: Aratech_project/settings.py:121
 msgid "English"
 msgstr "Anglais"
 
-#: Aratech/settings.py:124 Aratech/settings_base.py:121
+#: Aratech_project/settings.py:122
 msgid "French"
 msgstr "Français"
 
 #: app0_base/templates/app0_base/ai.html:6
 #: app0_base/templates/app0_base/contact.html:6
+#: app0_base/templates/app0_base/contact.html:14
 #: app0_base/templates/app0_base/expertise.html:6
-#: app0_base/templates/app0_base/index.html:6
+#: app0_base/templates/app0_base/expertise.html:14
+#: app0_base/templates/app0_base/index.html:8
 #: app0_base/templates/app0_base/legalnotice.html:6
 #: app0_base/templates/app0_base/serenicia.html:7
+#: app0_base/templates/app0_base/serenicia.html:15
 #: app0_base/templates/app0_base/team.html:6
+#: app0_base/templates/app0_base/team.html:14
 msgid "Background image"
 msgstr "Image d'arrière plan"
 
@@ -52,45 +56,45 @@ msgstr "d'objets, de défauts, de sons"
 msgid "everything is possible with"
 msgstr "tout est possible avec"
 
-#: app0_base/templates/app0_base/contact.html:14
+#: app0_base/templates/app0_base/contact.html:15
 msgid "A question, we project, curiosity"
 msgstr "Une question, un projet, de la curiosité"
 
-#: app0_base/templates/app0_base/contact.html:15
+#: app0_base/templates/app0_base/contact.html:16
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: app0_base/templates/app0_base/contact.html:31
-#: app0_base/templates/app0_base/contact.html:72
+#: app0_base/templates/app0_base/contact.html:32
+#: app0_base/templates/app0_base/contact.html:73
 msgid "Send"
 msgstr "Envoyer"
 
-#: app0_base/templates/app0_base/contact.html:37
+#: app0_base/templates/app0_base/contact.html:38
 msgid "Name"
 msgstr "Nom"
 
-#: app0_base/templates/app0_base/contact.html:41
+#: app0_base/templates/app0_base/contact.html:42
 msgid "First name"
 msgstr "Prénom"
 
-#: app0_base/templates/app0_base/contact.html:49
+#: app0_base/templates/app0_base/contact.html:50
 #: app0_base/templates/app0_base/legalnotice.html:51
 msgid "Phone"
 msgstr "Téléphone"
 
-#: app0_base/templates/app0_base/contact.html:53
+#: app0_base/templates/app0_base/contact.html:54
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: app0_base/templates/app0_base/contact.html:60
+#: app0_base/templates/app0_base/contact.html:61
 msgid "Subject"
 msgstr "Sujet"
 
-#: app0_base/templates/app0_base/contact.html:66
+#: app0_base/templates/app0_base/contact.html:67
 msgid "Message"
 msgstr "Message"
 
-#: app0_base/templates/app0_base/contact.html:77
+#: app0_base/templates/app0_base/contact.html:78
 msgid ""
 "By submitting this form, I accept that the information entered will be used "
 "as part of the contact request. For more information, please see our"
@@ -99,12 +103,12 @@ msgstr ""
 "exploitées dans le cadre de la demande de contact. Pour plus d'informations, "
 "veuillez consulter nos"
 
-#: app0_base/templates/app0_base/contact.html:77
+#: app0_base/templates/app0_base/contact.html:78
 #: app0_base/templates/app0_base/legalnotice.html:14
 msgid "Legal notice"
 msgstr "Mentions légales"
 
-#: app0_base/templates/app0_base/contact.html:78
+#: app0_base/templates/app0_base/contact.html:79
 msgid ""
 "In accordance with article L.223-2 of the Consumer Code, we inform you of "
 "the existence of the list of opposition to canvassing « Bloctel », on which "
@@ -114,45 +118,45 @@ msgstr ""
 "informons de l'existence de la liste d'opposition au démarchage « Bloctel », "
 "sur laquelle vous pouvez vous inscrire"
 
-#: app0_base/templates/app0_base/expertise.html:14
+#: app0_base/templates/app0_base/expertise.html:15
 msgid "A tailor-made app"
 msgstr "Une application sur-mesure"
 
-#: app0_base/templates/app0_base/expertise.html:16
+#: app0_base/templates/app0_base/expertise.html:17
 msgid "Code / A.I."
 msgstr "Code / I.A."
 
-#: app0_base/templates/app0_base/expertise.html:17
+#: app0_base/templates/app0_base/expertise.html:18
 msgid "You have an idea"
 msgstr "Vous avez une idée"
 
-#: app0_base/templates/app0_base/expertise.html:17
+#: app0_base/templates/app0_base/expertise.html:18
 msgid "a project"
 msgstr "un projet"
 
-#: app0_base/templates/app0_base/expertise.html:18
+#: app0_base/templates/app0_base/expertise.html:19
 msgid "we have the skills"
 msgstr "nous avons les compétences"
 
-#: app0_base/templates/app0_base/expertise.html:24
+#: app0_base/templates/app0_base/expertise.html:25
 msgid "We develop your product with our experience"
 msgstr "Nous développons votre produit avec notre expérience"
 
-#: app0_base/templates/app0_base/expertise.html:26
+#: app0_base/templates/app0_base/expertise.html:27
 msgid "The basic idea is to save you time and make your daily life easier"
 msgstr ""
 "L'idée de base est de vous faire gagner du temps et de faciliter votre "
 "quotidien"
 
-#: app0_base/templates/app0_base/expertise.html:27
+#: app0_base/templates/app0_base/expertise.html:28
 msgid "To achieve this goal, there will be several steps"
 msgstr "Pour atteindre cet objectif, il y aura plusieurs étapes"
 
-#: app0_base/templates/app0_base/expertise.html:29
+#: app0_base/templates/app0_base/expertise.html:30
 msgid "We discuss your project"
 msgstr "Nous discutons de votre projet"
 
-#: app0_base/templates/app0_base/expertise.html:30
+#: app0_base/templates/app0_base/expertise.html:31
 msgid ""
 "We offer you a model that will give you a good idea of what the application "
 "will do. This step can be done by yourself if you prefer"
@@ -161,7 +165,7 @@ msgstr ""
 "fera l'application. Cette étape peut être effectuée par vous-même si vous "
 "préférez"
 
-#: app0_base/templates/app0_base/expertise.html:31
+#: app0_base/templates/app0_base/expertise.html:32
 msgid ""
 "Once we have reached an agreement, our developers and A.I. researcher get to "
 "work to create the application and its functionalities"
@@ -169,7 +173,7 @@ msgstr ""
 "Une fois que nous sommes parvenus à un accord, nos développeurs et chercheur "
 "I.A. se mettent au travail pour créer l'application et ses fonctionnalités"
 
-#: app0_base/templates/app0_base/expertise.html:32
+#: app0_base/templates/app0_base/expertise.html:33
 msgid ""
 "Finally comes the testing phase. Your feedback will be essential to improve "
 "the application and add new features"
@@ -177,7 +181,7 @@ msgstr ""
 "Vient enfin la phase de test. Vos retours d'expérience seront essentiels "
 "pour améliorer l'application et ajouter de nouvelles fonctionnalités"
 
-#: app0_base/templates/app0_base/expertise.html:35
+#: app0_base/templates/app0_base/expertise.html:36
 msgid ""
 "We are a small team, which allows us to all know the company's projects and "
 "to be very responsive"
@@ -185,70 +189,69 @@ msgstr ""
 "Nous sommes une petite équipe, ce qui nous permet de connaître tous les "
 "projets de l'entreprise et d'être très réactifs"
 
-#: app0_base/templates/app0_base/footer.html:5
+#: app0_base/templates/app0_base/footer.html:6
 msgid "Footer"
 msgstr "Bas de page"
 
-#: app0_base/templates/app0_base/footer.html:21
-#: app0_base/templates/app0_base/header.html:46
+#: app0_base/templates/app0_base/footer.html:22
+#: app0_base/templates/app0_base/header.html:39
 msgid "The team"
 msgstr "L'équipe"
 
-#: app0_base/templates/app0_base/footer.html:24
-#: app0_base/templates/app0_base/header.html:49
+#: app0_base/templates/app0_base/footer.html:25
+#: app0_base/templates/app0_base/header.html:42
 msgid "Expertise"
 msgstr "Savoir-faire"
 
-#: app0_base/templates/app0_base/footer.html:27
-#: app0_base/templates/app0_base/header.html:52
+#: app0_base/templates/app0_base/footer.html:28
+#: app0_base/templates/app0_base/header.html:45
 msgid "Our A.I."
 msgstr "Notre I.A."
 
-#: app0_base/templates/app0_base/footer.html:30
-#: app0_base/templates/app0_base/header.html:55
+#: app0_base/templates/app0_base/footer.html:31
+#: app0_base/templates/app0_base/header.html:48
 msgid "Serenicia"
 msgstr "Sérénicia"
 
-#: app0_base/templates/app0_base/footer.html:33
-#: app0_base/templates/app0_base/header.html:58
+#: app0_base/templates/app0_base/footer.html:34
+#: app0_base/templates/app0_base/header.html:51
 msgid "Contact"
 msgstr "Contact"
 
-#: app0_base/templates/app0_base/footer.html:41
+#: app0_base/templates/app0_base/footer.html:42
 msgid "A project"
 msgstr "Un projet"
 
-#: app0_base/templates/app0_base/footer.html:43
+#: app0_base/templates/app0_base/footer.html:44
 msgid "Let's discuss it"
 msgstr "Discutons-en"
 
-#: app0_base/templates/app0_base/header.html:13
+#: app0_base/templates/app0_base/header.html:6
 msgid "Header"
 msgstr "Entête"
 
-#: app0_base/templates/app0_base/index.html:15
+#: app0_base/templates/app0_base/index.html:19
 msgid "Developer of applications containing Artificial Intelligence"
 msgstr "Développeur d'applications contenant de l'Intelligence Artificielle"
 
-#: app0_base/templates/app0_base/index.html:17
+#: app0_base/templates/app0_base/index.html:22
 msgid "A need for A.I."
 msgstr "Un besoin d'I.A."
 
-#: app0_base/templates/app0_base/index.html:18
+#: app0_base/templates/app0_base/index.html:23
 msgid "An app project"
 msgstr "Un projet d'application"
 
-#: app0_base/templates/app0_base/index.html:20
+#: app0_base/templates/app0_base/index.html:25
 msgid "Let's talk about it"
 msgstr "Parlons-en"
 
-#: app0_base/templates/app0_base/index.html:25
+#: app0_base/templates/app0_base/index.html:31
 msgid ""
-"Simplify your life with our Artificial Intelligence and/or a tailor-made "
-"application"
+"Simplify your life with our Artificial Intelligence and our tailor-made "
+"applications"
 msgstr ""
-"Simplifiez-vous la vie avec notre Intelligence Artificielle et/ou une "
-"application sur-mesure"
+"Simplifiez-vous la vie avec notre Intelligence Artificielle et nos applications sur-mesure"
 
 #: app0_base/templates/app0_base/legalnotice.html:21
 msgid "is a registered trademark"
@@ -379,49 +382,49 @@ msgstr "Cookies"
 msgid "This site does not use cookies"
 msgstr "Ce site n'utilise pas de cookies"
 
-#: app0_base/templates/app0_base/serenicia.html:18
+#: app0_base/templates/app0_base/serenicia.html:20
 msgid "The application for the social<br>management of nursing homes"
 msgstr "L'application pour la gestion<br>sociale des EHPAD"
 
-#: app0_base/templates/app0_base/serenicia.html:32
-#: app0_base/templates/app0_base/serenicia.html:128
+#: app0_base/templates/app0_base/serenicia.html:35
+#: app0_base/templates/app0_base/serenicia.html:135
 msgid "Messaging"
 msgstr "Messagerie"
 
-#: app0_base/templates/app0_base/serenicia.html:32
-#: app0_base/templates/app0_base/serenicia.html:128
+#: app0_base/templates/app0_base/serenicia.html:35
+#: app0_base/templates/app0_base/serenicia.html:135
 msgid "Blog"
 msgstr "Blog"
 
-#: app0_base/templates/app0_base/serenicia.html:45
+#: app0_base/templates/app0_base/serenicia.html:48
 msgid "Care"
 msgstr "Soins"
 
-#: app0_base/templates/app0_base/serenicia.html:58
+#: app0_base/templates/app0_base/serenicia.html:61
 msgid "Activities"
 msgstr "Activités"
 
-#: app0_base/templates/app0_base/serenicia.html:73
+#: app0_base/templates/app0_base/serenicia.html:76
 msgid "Communication"
 msgstr "Communication"
 
-#: app0_base/templates/app0_base/serenicia.html:73
+#: app0_base/templates/app0_base/serenicia.html:76
 msgid "with family"
 msgstr "avec la famille"
 
-#: app0_base/templates/app0_base/serenicia.html:86
+#: app0_base/templates/app0_base/serenicia.html:89
 msgid "Menu management"
 msgstr "Gestion menus"
 
-#: app0_base/templates/app0_base/serenicia.html:86
+#: app0_base/templates/app0_base/serenicia.html:89
 msgid "Meal evaluation"
 msgstr "Évaluation repas"
 
-#: app0_base/templates/app0_base/serenicia.html:99
+#: app0_base/templates/app0_base/serenicia.html:102
 msgid "Real-time<br>information"
 msgstr "Informations<br>en temps réel"
 
-#: app0_base/templates/app0_base/serenicia.html:110
+#: app0_base/templates/app0_base/serenicia.html:113
 msgid ""
 "Serenicia is a solution for communication and coordination between the "
 "various actors involved in the lives of residents of an EHPAD, such as "
@@ -431,7 +434,7 @@ msgstr ""
 "différents acteurs impliqués dans la vie des résidents d'un EHPAD, tels que "
 "les membres du personnel soignant, les familles et les médecins."
 
-#: app0_base/templates/app0_base/serenicia.html:111
+#: app0_base/templates/app0_base/serenicia.html:114
 msgid ""
 "The application offers several functionalities, such as the management of "
 "care, activities, meals or communication with families. It also makes it "
@@ -448,7 +451,7 @@ msgstr ""
 "Les familles, quand à elle, apprécieront la transparence qui leur est "
 "apporté."
 
-#: app0_base/templates/app0_base/serenicia.html:112
+#: app0_base/templates/app0_base/serenicia.html:115
 msgid ""
 "Serenicia is an innovative solution that meets the specific needs of EHPADs, "
 "and which contributes to improving the quality of life of residents, by "
@@ -458,7 +461,7 @@ msgstr ""
 "EHPAD, et qui contribue à améliorer la qualité de vie des résidents, en "
 "favorisant une prise en charge adaptée et personnalisée."
 
-#: app0_base/templates/app0_base/serenicia.html:130
+#: app0_base/templates/app0_base/serenicia.html:137
 msgid ""
 "Messaging makes it possible to communicate with the various stakeholders "
 "involved in resident care, such as nursing staff, doctors and families. It "
@@ -472,7 +475,7 @@ msgstr ""
 "entre les différents acteurs, de transmettre des informations importantes et "
 "de répondre rapidement aux questions et aux préoccupations."
 
-#: app0_base/templates/app0_base/serenicia.html:131
+#: app0_base/templates/app0_base/serenicia.html:138
 msgid ""
 "As for the blog, it makes it possible to share information on the activities "
 "offered to residents, important events of the EHPAD, ongoing projects, etc."
@@ -481,11 +484,11 @@ msgstr ""
 "proposées aux résidents, les événements importants de l'EHPAD, les projets "
 "en cours, etc."
 
-#: app0_base/templates/app0_base/serenicia.html:162
+#: app0_base/templates/app0_base/serenicia.html:169
 msgid "Management of care and activities"
 msgstr "Gestion des soins et des activités"
 
-#: app0_base/templates/app0_base/serenicia.html:164
+#: app0_base/templates/app0_base/serenicia.html:171
 msgid ""
 "This functionality makes it possible to manage the care and daily activities "
 "of EHPAD residents. In particular, it makes it possible to monitor drug "
@@ -497,11 +500,11 @@ msgstr ""
 "médicamenteux, les visites médicales, les soins infirmiers et les activités "
 "de loisirs proposées aux résidents."
 
-#: app0_base/templates/app0_base/serenicia.html:185
+#: app0_base/templates/app0_base/serenicia.html:192
 msgid "Communication with family"
 msgstr "Communication avec la famille"
 
-#: app0_base/templates/app0_base/serenicia.html:187
+#: app0_base/templates/app0_base/serenicia.html:194
 msgid ""
 "This feature allows you to communicate with the families of the residents, "
 "by providing them with information on the state of health of their loved "
@@ -511,16 +514,16 @@ msgstr ""
 "en leur fournissant des informations sur l'état de santé de leur proche, les "
 "activités proposées et les événements importants de l'EHPAD."
 
-#: app0_base/templates/app0_base/serenicia.html:188
+#: app0_base/templates/app0_base/serenicia.html:195
 msgid "It also allows you to share photos and videos of residents."
 msgstr ""
 "Elle permet également de partager des photos et des vidéos des résidents."
 
-#: app0_base/templates/app0_base/serenicia.html:209
+#: app0_base/templates/app0_base/serenicia.html:216
 msgid "Menu and meal management"
 msgstr "Gestion des menus et des repas"
 
-#: app0_base/templates/app0_base/serenicia.html:211
+#: app0_base/templates/app0_base/serenicia.html:218
 msgid ""
 "This functionality makes it possible to manage residents' menus and meals, "
 "taking into account their food preferences and specific diets."
@@ -529,7 +532,7 @@ msgstr ""
 "en prenant en compte leurs préférences alimentaires et leurs régimes "
 "spécifiques."
 
-#: app0_base/templates/app0_base/serenicia.html:212
+#: app0_base/templates/app0_base/serenicia.html:219
 msgid ""
 "It also gives residents, families or employees the possibility of noting "
 "meals, which gives valuable information to the chef..."
@@ -537,11 +540,11 @@ msgstr ""
 "Elle donne aussi la possibilité aux résidents, familles ou employés de noter "
 "les repas, ce qui donne de précieuses informations au chef..."
 
-#: app0_base/templates/app0_base/serenicia.html:233
+#: app0_base/templates/app0_base/serenicia.html:240
 msgid "Real-time information sharing"
 msgstr "Partage d'informations en temps réel"
 
-#: app0_base/templates/app0_base/serenicia.html:235
+#: app0_base/templates/app0_base/serenicia.html:242
 msgid ""
 "This functionality makes it possible to share important information in real "
 "time between the various participants in the EHPAD, such as the nursing "
@@ -551,7 +554,7 @@ msgstr ""
 "temps réel entre les différents intervenants de l'EHPAD, tels que le "
 "personnel soignant, les médecins et les familles."
 
-#: app0_base/templates/app0_base/serenicia.html:236
+#: app0_base/templates/app0_base/serenicia.html:243
 msgid ""
 "It thus makes it possible to facilitate coordination between the various "
 "actors involved in the care of residents."
@@ -559,15 +562,15 @@ msgstr ""
 "Elle permet ainsi de faciliter la coordination entre les différents acteurs "
 "impliqués dans les soins aux résidents."
 
-#: app0_base/templates/app0_base/team.html:14
+#: app0_base/templates/app0_base/team.html:15
 msgid "Your project in good hands"
 msgstr "Votre projet entre de bonnes mains"
 
-#: app0_base/templates/app0_base/team.html:16
+#: app0_base/templates/app0_base/team.html:17
 msgid "A responsive agency"
 msgstr "Une agence réactive"
 
-#: app0_base/templates/app0_base/team.html:17
+#: app0_base/templates/app0_base/team.html:18
 msgid ""
 "Complementary skills and interpersonal skills <br> are the great secrets of "
 "our agency"
@@ -575,7 +578,7 @@ msgstr ""
 "Compétences complémentaires et savoir-être <br> sont les grands secrets de "
 "notre agence"
 
-#: app0_base/templates/app0_base/team.html:23
+#: app0_base/templates/app0_base/team.html:24
 msgid ""
 "Associated in the creation of the agency, they provide clients with all "
 "their experience"
@@ -583,11 +586,11 @@ msgstr ""
 "Associés à la création de l'agence, ils mettent à disposition des clients "
 "toutes leurs expériences"
 
-#: app0_base/templates/app0_base/team.html:31
+#: app0_base/templates/app0_base/team.html:33
 msgid "A.I. researcher"
 msgstr "Chercheur en I.A. "
 
-#: app0_base/templates/app0_base/team.html:34
+#: app0_base/templates/app0_base/team.html:37
 msgid ""
 "Doctor and researcher in A.I., he remains on constant watch to bring to his "
 "research the best"
@@ -595,7 +598,7 @@ msgstr ""
 "Docteur et Chercheur en I.A., il reste en veille constante pour apporter à "
 "ses recherches le meilleur"
 
-#: app0_base/templates/app0_base/team.html:35
+#: app0_base/templates/app0_base/team.html:38
 msgid ""
 "When he is not looking, he plays tennis at a high level. Finally as high as "
 "his ever-increasing age allows"
@@ -603,12 +606,12 @@ msgstr ""
 "Quand il ne cherche pas, il joue au tennis à haut niveau. Enfin aussi haut "
 "que son âge en constante augmentation le lui permet"
 
-#: app0_base/templates/app0_base/team.html:43
-#: app0_base/templates/app0_base/team.html:54
+#: app0_base/templates/app0_base/team.html:47
+#: app0_base/templates/app0_base/team.html:60
 msgid "Developer"
 msgstr "Développeur"
 
-#: app0_base/templates/app0_base/team.html:46
+#: app0_base/templates/app0_base/team.html:51
 msgid ""
 "Complete developer, when he is not hands in the grease to repair his car, "
 "motorcycle, that of his wife or the neighbor, he likes to secure the "
@@ -618,7 +621,7 @@ msgstr ""
 "sa voiture, sa moto, celle de sa femme ou du voisin, il aime sécuriser les "
 "applications et reprendre son code pour l'améliorer"
 
-#: app0_base/templates/app0_base/team.html:57
+#: app0_base/templates/app0_base/team.html:64
 msgid ""
 "Developer, he likes to rack his brains to make modern and easy-to-use "
 "applications"
@@ -626,7 +629,7 @@ msgstr ""
 "Développeur, il aime se creuser la tête pour faire des applications modernes "
 "et simples d'utilisation"
 
-#: app0_base/templates/app0_base/team.html:58
+#: app0_base/templates/app0_base/team.html:65
 msgid ""
 "Drummer, Hockey player, you can also meet him on his mountain bike or at the "
 "cinema"
