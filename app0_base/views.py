@@ -1,8 +1,8 @@
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from .forms import ContactForm
+from django.shortcuts import render
+from django.utils.translation import gettext_lazy as _
 
+from .forms import ContactForm
 
 
 # Page Index
@@ -32,9 +32,7 @@ def serenicia(request):
 
 # Page contact
 def contact(request):
-    if request.method == "GET":
-        form = ContactForm()
-    else:
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data["name"]
@@ -43,17 +41,35 @@ def contact(request):
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data["from_email"]
             message = form.cleaned_data['message']
+
             try:
-                send_mail(subject, message, from_email, ["contact@aratech.fr"])
+                # Envoyer l'e-mail
+                # send_mail(subject, message, from_email, ["contact@aratech.fr"])
+                send_mail(
+                    subject,
+                    f'Prenom: {firstname} \n Nom: {name} \n Telephone: {phone} \n Email: {from_email} \n Sujet: {subject} \n Message: {message}',
+                    from_email,
+                    ['nicolas.lambert@aratech.fr'],
+                )
+
             except BadHeaderError:
-                return HttpResponse("Invalid header found.")
-            return redirect("success")
+                # En cas d'erreur de l'en-tête du message
+                error_message = "Une erreur s'est produite lors de l'envoi du message"
+                return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
+
+            except OSError:
+                # En cas d'erreur lors de l'envoie du message
+                error_message = "Impossible d'envoyer le courrier"
+                return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
+
+        # Retourner un message de succès
+        success_message = "Votre message a été envoyé avec succès !"
+        return render(request, 'app0_base/contact.html', {'form': form, 'success_message': success_message})
+
+    else:
+        form = ContactForm()
+
     return render(request, "app0_base/contact.html", {"form": form})
-
-
-# A rajouter dans les urls
-def success(request):
-    return HttpResponse("Success ! Thank you for your message.")
 
 
 # Page Legal Notice
