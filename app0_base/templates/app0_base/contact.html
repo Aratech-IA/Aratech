@@ -20,17 +20,16 @@
     </div>    
 </div>
 
-<!-- Message validation formulaire -->
 {% if error_message %}
+    <!-- Message en cas d'erreur -->
     <div class="bg-white">
-        <!-- Message en cas d'erreur -->
         <p class="text-center text-danger py-3">{{ error_message }}</p>
     </div>
 {% endif %}
 
 {% if success_message %}
+    <!-- Message en cas de succès -->
     <div class="bg-white">
-        <!-- Message en cas de succès -->
         <p class="text-center text-info py-3">{{ success_message }}</p>  
     </div>
 {% endif %}
@@ -42,11 +41,6 @@
         <form method="post" action="{% url 'contact' %}" class="contact-form p-4 p-sm-5">
 
             {% csrf_token %}
-            <!-- {{ form.as_p }}
-
-            <div class="form-actions">
-                <button type="submit">{% trans "Send" %}</button>
-            </div> -->
     
             <!-- Nom prénom -->
             <div class="d-flex flex-column flex-sm-row">

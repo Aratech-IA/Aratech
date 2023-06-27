@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 15:29+0200\n"
+"POT-Creation-Date: 2023-06-27 17:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,37 +64,36 @@ msgstr "Une question, un projet, de la curiosité"
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: app0_base/templates/app0_base/contact.html:32
-#: app0_base/templates/app0_base/contact.html:73
-msgid "Send"
-msgstr "Envoyer"
-
-#: app0_base/templates/app0_base/contact.html:38
+#: app0_base/templates/app0_base/contact.html:48
 msgid "Name"
 msgstr "Nom"
 
-#: app0_base/templates/app0_base/contact.html:42
+#: app0_base/templates/app0_base/contact.html:52
 msgid "First name"
 msgstr "Prénom"
 
-#: app0_base/templates/app0_base/contact.html:50
+#: app0_base/templates/app0_base/contact.html:60
 #: app0_base/templates/app0_base/legalnotice.html:51
 msgid "Phone"
 msgstr "Téléphone"
 
-#: app0_base/templates/app0_base/contact.html:54
+#: app0_base/templates/app0_base/contact.html:64
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: app0_base/templates/app0_base/contact.html:61
+#: app0_base/templates/app0_base/contact.html:71
 msgid "Subject"
 msgstr "Sujet"
 
-#: app0_base/templates/app0_base/contact.html:67
+#: app0_base/templates/app0_base/contact.html:77
 msgid "Message"
 msgstr "Message"
 
-#: app0_base/templates/app0_base/contact.html:78
+#: app0_base/templates/app0_base/contact.html:83
+msgid "Send"
+msgstr "Envoyer"
+
+#: app0_base/templates/app0_base/contact.html:88
 msgid ""
 "By submitting this form, I accept that the information entered will be used "
 "as part of the contact request. For more information, please see our"
@@ -103,12 +102,12 @@ msgstr ""
 "exploitées dans le cadre de la demande de contact. Pour plus d'informations, "
 "veuillez consulter nos"
 
-#: app0_base/templates/app0_base/contact.html:78
+#: app0_base/templates/app0_base/contact.html:88
 #: app0_base/templates/app0_base/legalnotice.html:14
 msgid "Legal notice"
 msgstr "Mentions légales"
 
-#: app0_base/templates/app0_base/contact.html:79
+#: app0_base/templates/app0_base/contact.html:89
 msgid ""
 "In accordance with article L.223-2 of the Consumer Code, we inform you of "
 "the existence of the list of opposition to canvassing « Bloctel », on which "
@@ -251,7 +250,8 @@ msgid ""
 "Simplify your life with our Artificial Intelligence and our tailor-made "
 "applications"
 msgstr ""
-"Simplifiez-vous la vie avec notre Intelligence Artificielle et nos applications sur-mesure"
+"Simplifiez-vous la vie avec notre Intelligence Artificielle et nos "
+"applications sur-mesure"
 
 #: app0_base/templates/app0_base/legalnotice.html:21
 msgid "is a registered trademark"
@@ -635,3 +635,15 @@ msgid ""
 "cinema"
 msgstr ""
 "Batteur, Hockeyeur, vous pourrez aussi le croiser sur son VTT ou au cinéma"
+
+#: app0_base/views.py:57
+msgid "An error occurred while sending the message"
+msgstr "Une erreur s'est produite lors de l'envoi du message"
+
+#: app0_base/views.py:62
+msgid "Unable to send mail"
+msgstr "Impossible d'envoyer le courrier"
+
+#: app0_base/views.py:66
+msgid "Your message has been sent successfully !"
+msgstr "Votre message a été envoyé avec succès"

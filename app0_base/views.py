@@ -44,7 +44,6 @@ def contact(request):
 
             try:
                 # Envoyer l'e-mail
-                # send_mail(subject, message, from_email, ["contact@aratech.fr"])
                 send_mail(
                     subject,
                     f'Prenom: {firstname} \n Nom: {name} \n Telephone: {phone} \n Email: {from_email} \n Sujet: {subject} \n Message: {message}',
@@ -54,16 +53,16 @@ def contact(request):
 
             except BadHeaderError:
                 # En cas d'erreur de l'en-tête du message
-                error_message = "Une erreur s'est produite lors de l'envoi du message"
+                error_message = _("An error occurred while sending the message")
                 return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
             except OSError:
                 # En cas d'erreur lors de l'envoie du message
-                error_message = "Impossible d'envoyer le courrier"
+                error_message = _("Unable to send mail")
                 return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
         # Retourner un message de succès
-        success_message = "Votre message a été envoyé avec succès !"
+        success_message = _("Your message has been sent successfully !")
         return render(request, 'app0_base/contact.html', {'form': form, 'success_message': success_message})
 
     else:
