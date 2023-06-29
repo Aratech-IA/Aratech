@@ -1,6 +1,7 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
+from Aratech_project.settings import EMAIL_CONTACT
 
 from .forms import ContactForm
 
@@ -48,7 +49,7 @@ def contact(request):
                     subject,
                     f'Prenom: {firstname} \n Nom: {name} \n Telephone: {phone} \n Email: {from_email} \n Sujet: {subject} \n Message: {message}',
                     from_email,
-                    ['nicolas.lambert@aratech.fr'],
+                    [EMAIL_CONTACT],
                 )
 
             except BadHeaderError:
@@ -60,6 +61,8 @@ def contact(request):
                 # En cas d'erreur lors de l'envoie du message
                 error_message = _("Unable to send mail")
                 return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
+
+            form = ContactForm()
 
         # Retourner un message de succès
         success_message = _("Your message has been sent successfully !")
