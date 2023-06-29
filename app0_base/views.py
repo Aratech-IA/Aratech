@@ -33,6 +33,7 @@ def serenicia(request):
 
 # Page contact
 def contact(request):
+    error_message = _("Unable to send mail")
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -51,6 +52,10 @@ def contact(request):
                     from_email,
                     [EMAIL_CONTACT],
                 )
+                # Retourner un message de succès
+                success_message = _("Your message has been sent successfully !")
+                form = ContactForm()
+                return render(request, 'app0_base/contact.html', {'form': form, 'success_message': success_message})
 
             except BadHeaderError:
                 # En cas d'erreur de l'en-tête du message
@@ -59,14 +64,11 @@ def contact(request):
 
             except OSError:
                 # En cas d'erreur lors de l'envoie du message
-                error_message = _("Unable to send mail")
                 return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
-            form = ContactForm()
-
         # Retourner un message de succès
-        success_message = _("Your message has been sent successfully !")
-        return render(request, 'app0_base/contact.html', {'form': form, 'success_message': success_message})
+        #success_message = _("Your message has been sent successfully !")
+        return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
     else:
         form = ContactForm()
