@@ -10,6 +10,6 @@ WORKDIR /App
 COPY start.sh /App
 ADD "https://api.github.com/repos/aratech-IA/aratech/commits/main" latest_commit
 RUN git clone https://github.com/Aratech-IA/Aratech.git
-RUN cd Aratech && python3 manage.py collectstatic && python manage.py migrate
+RUN cd Aratech && python3 manage.py collectstatic && python3 manage.py migrate
 
 CMD ["/App/start.sh"]
