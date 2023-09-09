@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://aratech.fr']
 
 SECRET_KEY = os.getenv('SECRET_KEY', '7keyZtIlfzaXV9VO_OOX1blyjcDXr8Ef6Ycg7mXdbm4')
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Application definition
 
