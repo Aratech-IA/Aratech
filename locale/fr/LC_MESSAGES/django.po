@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 17:47+0200\n"
+"POT-Creation-Date: 2023-09-18 19:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: Aratech_project/settings.py:121
+#: Aratech_project/settings.py:124
 msgid "English"
 msgstr "Anglais"
 
-#: Aratech_project/settings.py:122
+#: Aratech_project/settings.py:125
 msgid "French"
 msgstr "Français"
 
@@ -64,36 +64,36 @@ msgstr "Une question, un projet, de la curiosité"
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: app0_base/templates/app0_base/contact.html:48
+#: app0_base/templates/app0_base/contact.html:47
 msgid "Name"
 msgstr "Nom"
 
-#: app0_base/templates/app0_base/contact.html:52
+#: app0_base/templates/app0_base/contact.html:51
 msgid "First name"
 msgstr "Prénom"
 
-#: app0_base/templates/app0_base/contact.html:60
+#: app0_base/templates/app0_base/contact.html:59
 #: app0_base/templates/app0_base/legalnotice.html:51
 msgid "Phone"
 msgstr "Téléphone"
 
-#: app0_base/templates/app0_base/contact.html:64
+#: app0_base/templates/app0_base/contact.html:63
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: app0_base/templates/app0_base/contact.html:71
+#: app0_base/templates/app0_base/contact.html:70
 msgid "Subject"
 msgstr "Sujet"
 
-#: app0_base/templates/app0_base/contact.html:77
+#: app0_base/templates/app0_base/contact.html:76
 msgid "Message"
 msgstr "Message"
 
-#: app0_base/templates/app0_base/contact.html:83
+#: app0_base/templates/app0_base/contact.html:82
 msgid "Send"
 msgstr "Envoyer"
 
-#: app0_base/templates/app0_base/contact.html:88
+#: app0_base/templates/app0_base/contact.html:87
 msgid ""
 "By submitting this form, I accept that the information entered will be used "
 "as part of the contact request. For more information, please see our"
@@ -102,12 +102,12 @@ msgstr ""
 "exploitées dans le cadre de la demande de contact. Pour plus d'informations, "
 "veuillez consulter nos"
 
-#: app0_base/templates/app0_base/contact.html:88
+#: app0_base/templates/app0_base/contact.html:87
 #: app0_base/templates/app0_base/legalnotice.html:14
 msgid "Legal notice"
 msgstr "Mentions légales"
 
-#: app0_base/templates/app0_base/contact.html:89
+#: app0_base/templates/app0_base/contact.html:88
 msgid ""
 "In accordance with article L.223-2 of the Consumer Code, we inform you of "
 "the existence of the list of opposition to canvassing « Bloctel », on which "
@@ -387,12 +387,12 @@ msgid "The application for the social<br>management of nursing homes"
 msgstr "L'application pour la gestion<br>sociale des EHPAD"
 
 #: app0_base/templates/app0_base/serenicia.html:35
-#: app0_base/templates/app0_base/serenicia.html:135
+#: app0_base/templates/app0_base/serenicia.html:148
 msgid "Messaging"
 msgstr "Messagerie"
 
 #: app0_base/templates/app0_base/serenicia.html:35
-#: app0_base/templates/app0_base/serenicia.html:135
+#: app0_base/templates/app0_base/serenicia.html:148
 msgid "Blog"
 msgstr "Blog"
 
@@ -424,7 +424,11 @@ msgstr "Évaluation repas"
 msgid "Real-time<br>information"
 msgstr "Informations<br>en temps réel"
 
-#: app0_base/templates/app0_base/serenicia.html:113
+#: app0_base/templates/app0_base/serenicia.html:116
+msgid "Quality"
+msgstr "Qualité"
+
+#: app0_base/templates/app0_base/serenicia.html:126
 msgid ""
 "Serenicia is a solution for communication and coordination between the "
 "various actors involved in the lives of residents of an EHPAD, such as "
@@ -434,7 +438,7 @@ msgstr ""
 "différents acteurs impliqués dans la vie des résidents d'un EHPAD, tels que "
 "les membres du personnel soignant, les familles et les médecins."
 
-#: app0_base/templates/app0_base/serenicia.html:114
+#: app0_base/templates/app0_base/serenicia.html:127
 msgid ""
 "The application offers several functionalities, such as the management of "
 "care, activities, meals or communication with families. It also makes it "
@@ -451,7 +455,7 @@ msgstr ""
 "Les familles, quand à elle, apprécieront la transparence qui leur est "
 "apporté."
 
-#: app0_base/templates/app0_base/serenicia.html:115
+#: app0_base/templates/app0_base/serenicia.html:128
 msgid ""
 "Serenicia is an innovative solution that meets the specific needs of EHPADs, "
 "and which contributes to improving the quality of life of residents, by "
@@ -461,7 +465,7 @@ msgstr ""
 "EHPAD, et qui contribue à améliorer la qualité de vie des résidents, en "
 "favorisant une prise en charge adaptée et personnalisée."
 
-#: app0_base/templates/app0_base/serenicia.html:137
+#: app0_base/templates/app0_base/serenicia.html:150
 msgid ""
 "Messaging makes it possible to communicate with the various stakeholders "
 "involved in resident care, such as nursing staff, doctors and families. It "
@@ -475,7 +479,7 @@ msgstr ""
 "entre les différents acteurs, de transmettre des informations importantes et "
 "de répondre rapidement aux questions et aux préoccupations."
 
-#: app0_base/templates/app0_base/serenicia.html:138
+#: app0_base/templates/app0_base/serenicia.html:151
 msgid ""
 "As for the blog, it makes it possible to share information on the activities "
 "offered to residents, important events of the EHPAD, ongoing projects, etc."
@@ -484,11 +488,11 @@ msgstr ""
 "proposées aux résidents, les événements importants de l'EHPAD, les projets "
 "en cours, etc."
 
-#: app0_base/templates/app0_base/serenicia.html:169
+#: app0_base/templates/app0_base/serenicia.html:182
 msgid "Management of care and activities"
 msgstr "Gestion des soins et des activités"
 
-#: app0_base/templates/app0_base/serenicia.html:171
+#: app0_base/templates/app0_base/serenicia.html:184
 msgid ""
 "This functionality makes it possible to manage the care and daily activities "
 "of EHPAD residents. In particular, it makes it possible to monitor drug "
@@ -500,11 +504,11 @@ msgstr ""
 "médicamenteux, les visites médicales, les soins infirmiers et les activités "
 "de loisirs proposées aux résidents."
 
-#: app0_base/templates/app0_base/serenicia.html:192
+#: app0_base/templates/app0_base/serenicia.html:205
 msgid "Communication with family"
 msgstr "Communication avec la famille"
 
-#: app0_base/templates/app0_base/serenicia.html:194
+#: app0_base/templates/app0_base/serenicia.html:207
 msgid ""
 "This feature allows you to communicate with the families of the residents, "
 "by providing them with information on the state of health of their loved "
@@ -514,16 +518,16 @@ msgstr ""
 "en leur fournissant des informations sur l'état de santé de leur proche, les "
 "activités proposées et les événements importants de l'EHPAD."
 
-#: app0_base/templates/app0_base/serenicia.html:195
+#: app0_base/templates/app0_base/serenicia.html:208
 msgid "It also allows you to share photos and videos of residents."
 msgstr ""
 "Elle permet également de partager des photos et des vidéos des résidents."
 
-#: app0_base/templates/app0_base/serenicia.html:216
+#: app0_base/templates/app0_base/serenicia.html:229
 msgid "Menu and meal management"
 msgstr "Gestion des menus et des repas"
 
-#: app0_base/templates/app0_base/serenicia.html:218
+#: app0_base/templates/app0_base/serenicia.html:231
 msgid ""
 "This functionality makes it possible to manage residents' menus and meals, "
 "taking into account their food preferences and specific diets."
@@ -532,7 +536,7 @@ msgstr ""
 "en prenant en compte leurs préférences alimentaires et leurs régimes "
 "spécifiques."
 
-#: app0_base/templates/app0_base/serenicia.html:219
+#: app0_base/templates/app0_base/serenicia.html:232
 msgid ""
 "It also gives residents, families or employees the possibility of noting "
 "meals, which gives valuable information to the chef..."
@@ -540,11 +544,11 @@ msgstr ""
 "Elle donne aussi la possibilité aux résidents, familles ou employés de noter "
 "les repas, ce qui donne de précieuses informations au chef..."
 
-#: app0_base/templates/app0_base/serenicia.html:240
+#: app0_base/templates/app0_base/serenicia.html:253
 msgid "Real-time information sharing"
 msgstr "Partage d'informations en temps réel"
 
-#: app0_base/templates/app0_base/serenicia.html:242
+#: app0_base/templates/app0_base/serenicia.html:255
 msgid ""
 "This functionality makes it possible to share important information in real "
 "time between the various participants in the EHPAD, such as the nursing "
@@ -554,13 +558,35 @@ msgstr ""
 "temps réel entre les différents intervenants de l'EHPAD, tels que le "
 "personnel soignant, les médecins et les familles."
 
-#: app0_base/templates/app0_base/serenicia.html:243
+#: app0_base/templates/app0_base/serenicia.html:256
 msgid ""
 "It thus makes it possible to facilitate coordination between the various "
 "actors involved in the care of residents."
 msgstr ""
 "Elle permet ainsi de faciliter la coordination entre les différents acteurs "
 "impliqués dans les soins aux résidents."
+
+#: app0_base/templates/app0_base/serenicia.html:276
+msgid "Quality management"
+msgstr "Gestion de la qualité"
+
+#: app0_base/templates/app0_base/serenicia.html:278
+msgid ""
+"This functionality allows you to measure and improve the quality in your "
+"establishment."
+msgstr ""
+"Cette fonctionnalité permet de mesurer et améliorer la qualité dans votre "
+"établissement."
+
+#: app0_base/templates/app0_base/serenicia.html:279
+msgid ""
+"You can simply respond to each criterion of the HAS framework, and attach "
+"the protocols that you have put in place. The criteria can be assigned to "
+"different people."
+msgstr ""
+"Vous pourrez simplement répondre à chaque critère du référentiel HAS,  et y "
+"joindre les prorocoles que vous avez mis en place. Les critères peuvent être "
+"attribué à différentes personnes."
 
 #: app0_base/templates/app0_base/team.html:15
 msgid "Your project in good hands"
@@ -636,14 +662,14 @@ msgid ""
 msgstr ""
 "Batteur, Hockeyeur, vous pourrez aussi le croiser sur son VTT ou au cinéma"
 
-#: app0_base/views.py:57
-msgid "An error occurred while sending the message"
-msgstr "Une erreur s'est produite lors de l'envoi du message"
-
-#: app0_base/views.py:62
+#: app0_base/views.py:41
 msgid "Unable to send mail"
 msgstr "Impossible d'envoyer le courrier"
 
-#: app0_base/views.py:66
+#: app0_base/views.py:61
 msgid "Your message has been sent successfully !"
 msgstr "Votre message a été envoyé avec succès"
+
+#: app0_base/views.py:67
+msgid "An error occurred while sending the message"
+msgstr "Une erreur s'est produite lors de l'envoi du message"

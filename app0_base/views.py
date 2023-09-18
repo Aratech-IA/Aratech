@@ -66,8 +66,6 @@ def contact(request):
                 # En cas d'erreur lors de l'envoie du message
                 return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
-        # Retourner un message de succès
-        #success_message = _("Your message has been sent successfully !")
         return render(request, 'app0_base/contact.html', {'form': form, 'error_message': error_message})
 
     else:
