@@ -6,6 +6,8 @@ from Aratech_project.settings import EMAIL_CONTACT
 from .forms import ContactForm
 
 
+
+
 # Page Index
 def index(request):
     return render(request, 'app0_base/index.html', {"index": True})
