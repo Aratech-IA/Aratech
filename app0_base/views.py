@@ -50,8 +50,8 @@ def contact(request):
                 # Envoyer l'e-mail
                 send_mail(
                     subject,
-                    f'Prenom: {firstname} \n Nom: {name} \n Telephone: {phone} \n Email: {from_email} \n Sujet: {subject} \n Message: {message}',
-                    from_email,
+                    f'Nous avons reçu un message venant du formulaire contact de Aratech.fr : \n \n  Prenom : {firstname} \n  Nom : {name} \n  Telephone : {phone} \n  Email : {from_email} \n  Sujet : {subject} \n  Message : {message}',
+                    "nicolas.lambert@aratech.fr",
                     [EMAIL_CONTACT],
                 )
                 # Retourner un message de succès
