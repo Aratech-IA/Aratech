@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 19:14+0200\n"
+"POT-Creation-Date: 2024-04-02 18:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,11 +89,11 @@ msgstr "Sujet"
 msgid "Message"
 msgstr "Message"
 
-#: app0_base/templates/app0_base/contact.html:82
+#: app0_base/templates/app0_base/contact.html:88
 msgid "Send"
 msgstr "Envoyer"
 
-#: app0_base/templates/app0_base/contact.html:87
+#: app0_base/templates/app0_base/contact.html:93
 msgid ""
 "By submitting this form, I accept that the information entered will be used "
 "as part of the contact request. For more information, please see our"
@@ -102,12 +102,12 @@ msgstr ""
 "exploitées dans le cadre de la demande de contact. Pour plus d'informations, "
 "veuillez consulter nos"
 
-#: app0_base/templates/app0_base/contact.html:87
+#: app0_base/templates/app0_base/contact.html:93
 #: app0_base/templates/app0_base/legalnotice.html:14
 msgid "Legal notice"
 msgstr "Mentions légales"
 
-#: app0_base/templates/app0_base/contact.html:88
+#: app0_base/templates/app0_base/contact.html:94
 msgid ""
 "In accordance with article L.223-2 of the Consumer Code, we inform you of "
 "the existence of the list of opposition to canvassing « Bloctel », on which "
@@ -662,14 +662,26 @@ msgid ""
 msgstr ""
 "Batteur, Hockeyeur, vous pourrez aussi le croiser sur son VTT ou au cinéma"
 
-#: app0_base/views.py:41
+#: app0_base/views.py:48
 msgid "Unable to send mail"
 msgstr "Impossible d'envoyer le courrier"
 
-#: app0_base/views.py:61
+#: app0_base/views.py:62
+msgid "Invalid captcha"
+msgstr "Captcha invalide"
+
+#: app0_base/views.py:85
 msgid "Your message has been sent successfully !"
 msgstr "Votre message a été envoyé avec succès"
 
-#: app0_base/views.py:67
+#: app0_base/views.py:89
 msgid "An error occurred while sending the message"
 msgstr "Une erreur s'est produite lors de l'envoi du message"
+
+#: app0_base/views.py:95
+msgid "The reCAPTCHA indicates suspicious activity. Try Again..."
+msgstr "Le reCAPTCHA indique une activité suspecte. Veuillez réessayer..."
+
+#: app0_base/views.py:98
+msgid "An error occurred while verifying the reCAPTCHA..."
+msgstr "Une erreur est survenue lors de la vérification du reCAPTCHA..."

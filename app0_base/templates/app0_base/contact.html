@@ -76,6 +76,12 @@
                 <p>{% trans "Message" %}</p>
                 {{ form.message }}
             </div>
+
+            <!-- Captcha -->
+            <div
+                class="g-recaptcha pt-2"
+                data-sitekey="6Lc4BKwpAAAAALcMD93j3KV4DnHsG0LzHNGcldjh">
+            </div>
         
             <!-- Send button -->
             <div class="d-flex">
@@ -89,7 +95,6 @@
 
     </div>
     
-
     {% include 'app0_base/footer.html' %}
 
 </div>
