@@ -32,19 +32,15 @@ Les migrations ont besoin d'être dans le repo git pour pouvoir éxécuter la co
 La RE7 est un site de test qui permet de valider le fonctionnement avec de passer sur de la PROD.
 
 Pour déployer en RE7, il suffit de push ou de merge sur la branche main. C'est la CI/CD qui va déployer automatiquement
-avec les bonnes variables d'environnement sur l'infra Scaleway. En particulier, la variable ENV passe à RE7.
-Les valeurs des variables d'environnement sont stockées dans les secrets github.
+avec les bonnes variables d'environnement sur l'infra OVH. En particulier, la variable ENV passe à RE7.
+Les valeurs des variables d'environnement sont stockées dans les secrets Doppler.
 
 Le site est disponible à l'adresse : https://re7.aratech.fr
 
-L'image docker est push sur le registry Scaleway et elle est tag avec le numéro de commit.
-Les fichiers statiques sont déployés sur un bucket S3 Scaleway et ne nécessitent donc pas de serveur http
-supplémentaire (type Nginx). 
+L'image docker est push sur le registry Docker Hub et elle est tag avec le numéro de commit.
 
 ## Déployer en production
 Pour déployer en production, il convient de créer une release sur la branche main.
 Le site sera alors disponible sur https://aratech.fr
 
-L'image docker est push sur le registry Scaleway et elle est tag avec le numéro de release.
-Le bucket S3 de production héberge les fichiers statiques.
-
+L'image docker est push sur le registry Docker Hub et elle est tag avec le numéro de release.
