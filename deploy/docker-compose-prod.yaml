@@ -1,0 +1,24 @@
+services:
+
+  vitrine:
+    image: aratechia/vitrine:${IMAGE_TAG}
+
+    labels:
+      - "traefik.http.services.vitrine.loadbalancer.server.port=80"
+      - "traefik.http.routers.vitrine_http.entrypoints=web"
+      - "traefik.http.routers.vitrine_http.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
+      - "traefik.http.routers.vitrine_http.middlewares=vitrine_https"
+      - "traefik.http.middlewares.vitrine_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.vitrine.entrypoints=websecure"
+      - "traefik.http.routers.vitrine.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
+      - "traefik.http.routers.vitrine.tls=true"
+      - "traefik.http.routers.vitrine.tls.certresolver=myresolver"
+      # add header for csrf
+      - "traefik.http.middlewares.vitrineHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.20
+
+networks:
+  compose_traefik_aratech_net:
+    external: true
