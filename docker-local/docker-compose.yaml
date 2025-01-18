@@ -1,0 +1,19 @@
+
+services:
+  aratech-vitrine:
+    image: aratech/vitrine:dev
+    build:
+      context: ../
+      dockerfile: docker-local/Dockerfile-dev
+    container_name: aratech-vitrine
+    command: |
+      sh -c "
+      /App/start.sh
+      "
+    env_file:
+      - .env
+    volumes:
+      - ${APP_DIR}:/App
+    ports:
+      - "8000:9090"
+
