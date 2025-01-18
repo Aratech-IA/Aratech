@@ -93,7 +93,7 @@ jobs:
             ./deploy/docker-compose-re7.yaml,
             ./deploy/docker-compose-prod.yaml,
             ./${{ env.VERSION_FILE }},
-          target: /home/canin/
+          target: /home/vitrine/
           port: ${{ secrets.SSH_VITRINE_PORT }}
           overwrite: true
 #
