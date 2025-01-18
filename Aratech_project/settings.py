@@ -138,10 +138,23 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = os.getenv('STATIC_URL', 'static/')
+if os.getenv('ENV', '') != 'dev':
+    print('===========> django in mode nginx PROD')
+    STATIC_URL = os.getenv('STATIC_URL', 'static/')
+else:
+    print('===========> django in mode whitenoise DEV')
+    MIDDLEWARE += [
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+    ]
+    STORAGES = {
+        "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+        "staticfiles": {"BACKEND": "whitenoise.storage.StaticFilesStorage"},
+    }
+    STATIC_URL = 'static/'
+    WHITENOISE_MAX_AGE = 0
+
+
 STATIC_ROOT = '../static_root'
 
 # Default primary key field type
