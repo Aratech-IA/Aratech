@@ -1,7 +1,7 @@
 
 services:
   aratech-vitrine:
-    image: aratech/vitrine:dev
+    image: aratechia/vitrine:local
     build:
       context: ../
       dockerfile: docker-local/Dockerfile-dev
