@@ -108,10 +108,10 @@ jobs:
       - name: Start docker compose
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.SSH_CANIN_HOST }}
-          username: ${{ secrets.SSH_CANIN_USER }}
-          key: ${{ secrets.SSH_CANIN_KEY }}
-          port: ${{ secrets.SSH_CANIN_PORT }}
+          host: ${{ secrets.SSH_VITRINE_HOST }}
+          username: ${{ secrets.SSH_VITRINE_USER }}
+          key: ${{ secrets.SSH_VITRINE_KEY }}
+          port: ${{ secrets.SSH_VITRINE_PORT }}
           script: |
             source ${{ env.VERSION_FILE }}
             cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} > combined-$DEPLOY_ENV.env
