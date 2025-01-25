@@ -25,6 +25,10 @@ services:
       - EMAIL_HOST_PASSWORD=${EMAIL_SENDGRID_PASSWORD}
       - EMAIL_CONTACT=${EMAIL_CONTACT}
       - CAPTCHA_SECRETKEY=${CAPTCHA_SECRETKEY}
+    command: |
+      sh -c "
+      /App/start.sh
+      "
     volumes:
       - static_data_vitrine:/App/static_root
     labels:
@@ -41,7 +45,7 @@ services:
       # Note: when used in docker-compose.yml all dollar signs in the hash need to be doubled for escaping.
       # To create a user:password pair, the following command can be used:
       # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-      - "traefik.http.middlewares.vitrine-auth.basicauth.users=vitrine:$$apr1$$3YNAE918$$ClKUZzdYsrysRDV.tx09Y."
+      - "traefik.http.middlewares.vitrine-auth.basicauth.users=vitrine:$$apr1$$f4ZHGTRQ$$88V6AQCN6VwSJqSwdVEl10"
       # add header for csrf
       - "traefik.http.middlewares.django-vitrine-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
