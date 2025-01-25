@@ -20,6 +20,9 @@ jobs:
         run: |
           echo "DEPLOY_ENV=re7" > version.env
           echo "IMAGE_TAG=${{ github.sha }}" >> version.env
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRE }}" > secret.env
+          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
+          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Set variables for pull request
         if: github.event_name == 'pull_request'
         run: |
@@ -75,12 +78,14 @@ jobs:
         run: |
           source version.env
           echo "VERSION_FILE=version_${DEPLOY_ENV}.env" >> $GITHUB_ENV
+          echo "SECRET_FILE=secret_${DEPLOY_ENV}.env" >> $GITHUB_ENV
 
       - name: Display variables
         run: |
           cat version.env
           echo "${{ env.VERSION_FILE }}"
           mv version.env ${{ env.VERSION_FILE }}
+          mv secret.env ${{ env.SECRET_FILE }}
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
@@ -93,6 +98,8 @@ jobs:
             ./deploy/docker-compose-re7.yaml,
             ./deploy/docker-compose-prod.yaml,
             ./${{ env.VERSION_FILE }},
+            ./${{ env.SECRET_FILE }},
+            ./deploy/vitrine-re7.env
           target: /home/vitrine/
           port: ${{ secrets.SSH_VITRINE_PORT }}
           overwrite: true

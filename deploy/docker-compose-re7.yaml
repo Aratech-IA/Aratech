@@ -1,25 +1,49 @@
 services:
 
-  vitrine-re7:
-    image: aratechi/vitrine:${IMAGE_TAG}
-
+  web-vitrine-re7:
+    image: nginx
+    volumes:
+      - static_data_vitrine:/usr/share/nginx/html/static_root
+      - ./nginx.conf:/etc/nginx/conf.d/vitrine.conf
     labels:
-      - "traefik.http.services.vitrine-re7.loadbalancer.server.port=80"
-      - "traefik.http.routers.vitrine-re7_http.entrypoints=web"
-      - "traefik.http.routers.vitrine-re7_http.rule=Host(`re7.aratech.fr`)"
-      - "traefik.http.routers.vitrine-re7_http.middlewares=vitrine-re7_https"
-      - "traefik.http.middlewares.vitrine-re7_https.redirectscheme.scheme=https"
-      - "traefik.http.routers.vitrine-re7.entrypoints=websecure"
-      - "traefik.http.routers.vitrine-re7.rule=Host(`re7.aratech.fr`)"
-      - "traefik.http.routers.vitrine-re7.tls=true"
-      - "traefik.http.routers.vitrine-re7.tls.certresolver=myresolver"
-      - "traefik.http.routers.vitrine-re7.middlewares=vitrine-auth"
+      - "traefik.http.routers.web-vitrine-re7.rule=Host(`static.aratech.fr`)"
+      - "traefik.http.routers.web-vitrine-re7.tls=true"
+      - "traefik.http.routers.web-vitrine-re7.tls.certresolver=myresolver"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.22
+
+  django-vitrine-re7:
+    image: aratechi/vitrine:${IMAGE_TAG}
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - STATIC_URL=${STATIC_URL}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - EMAIL_CONTACT=${EMAIL_CONTACT}
+      - CAPTCHA_SECRETKEY=${CAPTCHA_SECRETKEY}
+    volumes:
+      - static_data_vitrine:/App/static_root
+    labels:
+      - "traefik.http.services.django-vitrine-re7.loadbalancer.server.port=80"
+      - "traefik.http.routers.django-vitrine-re7_http.entrypoints=web"
+      - "traefik.http.routers.django-vitrine-re7_http.rule=Host(`re7.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine-re7_http.middlewares=vitrine-re7_https"
+      - "traefik.http.middlewares.django-vitrine-re7_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.django-vitrine-re7.entrypoints=websecure"
+      - "traefik.http.routers.django-vitrine-re7.rule=Host(`re7.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine-re7.tls=true"
+      - "traefik.http.routers.django-vitrine-re7.tls.certresolver=myresolver"
+      - "traefik.http.routers.django-vitrine-re7.middlewares=vitrine-auth"
       # Note: when used in docker-compose.yml all dollar signs in the hash need to be doubled for escaping.
       # To create a user:password pair, the following command can be used:
       # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
       - "traefik.http.middlewares.vitrine-auth.basicauth.users=vitrine:$$apr1$$3YNAE918$$ClKUZzdYsrysRDV.tx09Y."
       # add header for csrf
-      - "traefik.http.middlewares.vitrine-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+      - "traefik.http.middlewares.django-vitrine-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
       compose_traefik_aratech_net:
         ipv4_address: 10.5.5.21
@@ -27,3 +51,6 @@ services:
 networks:
   compose_traefik_aratech_net:
     external: true
+
+volumes:
+  static_data_vitrine:
