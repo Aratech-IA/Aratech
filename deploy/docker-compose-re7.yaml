@@ -14,21 +14,21 @@ services:
         ipv4_address: 10.5.5.22
 
   django-vitrine-re7:
-    image: aratechi/vitrine:${IMAGE_TAG}
+    image: aratechia/vitrine:${IMAGE_TAG}
     environment:
       - DEBUG=${DEBUG}
-      - SECRET_KEY=${SECRET_KEY}
+      - SECRET_KEY=${DJANGO_SECRET_KEY}
       - STATIC_URL=${STATIC_URL}
       - EMAIL_HOST=${EMAIL_HOST}
       - EMAIL_PORT=${EMAIL_PORT}
       - EMAIL_HOST_USER=${EMAIL_HOST_USER}
-      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - EMAIL_HOST_PASSWORD=${EMAIL_SENDGRID_PASSWORD}
       - EMAIL_CONTACT=${EMAIL_CONTACT}
       - CAPTCHA_SECRETKEY=${CAPTCHA_SECRETKEY}
     volumes:
       - static_data_vitrine:/App/static_root
     labels:
-      - "traefik.http.services.django-vitrine-re7.loadbalancer.server.port=80"
+      - "traefik.http.services.django-vitrine-re7.loadbalancer.server.port=9090"
       - "traefik.http.routers.django-vitrine-re7_http.entrypoints=web"
       - "traefik.http.routers.django-vitrine-re7_http.rule=Host(`re7.aratech.fr`)"
       - "traefik.http.routers.django-vitrine-re7_http.middlewares=vitrine-re7_https"
