@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "DEPLOY_ENV=re7" > version.env
           echo "IMAGE_TAG=${{ github.sha }}" >> version.env
-          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRE }}" > secret.env
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}" > secret.env
           echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
           echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Set variables for pull request
@@ -104,15 +104,16 @@ jobs:
           target: /home/vitrine/
           port: ${{ secrets.SSH_VITRINE_PORT }}
           overwrite: true
-#
-#      - name: Start docker compose
-#        uses: appleboy/ssh-action@v1.0.0
-#        with:
-#          host: ${{ secrets.SSH_CANIN_HOST }}
-#          username: ${{ secrets.SSH_CANIN_USER }}
-#          key: ${{ secrets.SSH_CANIN_KEY }}
-#          port: ${{ secrets.SSH_CANIN_PORT }}
-#          script: |
-#            source ${{ env.VERSION_FILE }}
-#            cd deploy
+
+      - name: Start docker compose
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_CANIN_HOST }}
+          username: ${{ secrets.SSH_CANIN_USER }}
+          key: ${{ secrets.SSH_CANIN_KEY }}
+          port: ${{ secrets.SSH_CANIN_PORT }}
+          script: |
+            source ${{ env.VERSION_FILE }}
+            cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} > combined-$DEPLOY_ENV.env
+            cd deploy
 #            bash start_remote.sh $DEPLOY_ENV

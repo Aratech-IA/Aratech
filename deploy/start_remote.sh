@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker compose --env-file vitrine-$1.env up -d
+docker compose --env-file combined-$1.env up -d
