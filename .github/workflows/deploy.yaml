@@ -114,6 +114,6 @@ jobs:
           port: ${{ secrets.SSH_VITRINE_PORT }}
           script: |
             source ${{ env.VERSION_FILE }}
-            cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} > combined-$DEPLOY_ENV.env
+            cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} ${{ env.VERSION_FILE }} > combined-$DEPLOY_ENV.env
             cd deploy
 #            bash start_remote.sh $DEPLOY_ENV
