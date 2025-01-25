@@ -99,7 +99,8 @@ jobs:
             ./deploy/docker-compose-prod.yaml,
             ./${{ env.VERSION_FILE }},
             ./${{ env.SECRET_FILE }},
-            ./deploy/vitrine-re7.env
+            ./deploy/vitrine-re7.env,
+            ./deploy/nginx.conf
           target: /home/vitrine/
           port: ${{ secrets.SSH_VITRINE_PORT }}
           overwrite: true
