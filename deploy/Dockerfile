@@ -8,4 +8,6 @@ RUN sed -i  '/config.should_reload:/a  \ \ \ \ \ \ \ \ server.force_exit = True'
 
 WORKDIR /App
 
-COPY . .
+COPY ./src .
+
+RUN chmod +x start.sh
