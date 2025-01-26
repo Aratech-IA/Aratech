@@ -1,0 +1,43 @@
+.index_page {
+    height: 100vh;
+    padding-top: 1em;
+
+    h2 {
+        @media screen and (min-width: $tablette-media-rupture) {
+            text-align: center;
+        }
+    }
+
+    .hauteur1 {
+        height: 30%;
+    }
+
+    .text1 {
+        width: 90%;
+
+        @media screen and (min-width: $tablette-media-rupture) {
+            width: 42%;
+        }
+    }
+
+    .hauteur2 {
+        height: 40%;
+    }
+}
+
+.img-fond-index {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.image-fond-index {
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.12;
+
+    @media screen and (min-width: $fix-media-rupture) {
+        width: 100%;
+    }
+}
