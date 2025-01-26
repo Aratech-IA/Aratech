@@ -1,11 +1,19 @@
 
 services:
+
+  web-vitrine:
+    image: nginx
+    volumes:
+      - static_data_vitrine:/usr/share/nginx/html/static_root
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+
   aratech-vitrine:
     image: aratechia/vitrine:local
     build:
       context: ../
       dockerfile: docker-local/Dockerfile-dev
-    container_name: aratech-vitrine
     command: |
       sh -c "
       /App/start.sh
@@ -14,6 +22,10 @@ services:
       - .env
     volumes:
       - ${APP_DIR}/src:/App
+      - static_data_vitrine:/App/static_root
     ports:
       - "8000:9090"
+
+volumes:
+  static_data_vitrine:
 

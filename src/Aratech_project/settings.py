@@ -139,23 +139,9 @@ LOCALE_PATHS = (
 )
 
 
-if os.getenv('ENV', '') != 'dev':
-    print('===========> django in mode nginx PROD')
-    STATIC_URL = os.getenv('STATIC_URL', 'static/')
-else:
-    print('===========> django in mode whitenoise DEV')
-    MIDDLEWARE += [
-        'whitenoise.middleware.WhiteNoiseMiddleware',
-    ]
-    STORAGES = {
-        "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
-        "staticfiles": {"BACKEND": "whitenoise.storage.StaticFilesStorage"},
-    }
-    STATIC_URL = 'static/'
-    WHITENOISE_MAX_AGE = 0
+STATIC_URL = os.getenv('STATIC_URL', 'static/')
 
-
-STATIC_ROOT = '../static_root'
+STATIC_ROOT = './static_root'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
