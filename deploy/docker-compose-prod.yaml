@@ -29,6 +29,8 @@ services:
       sh -c "
       /App/start.sh
       "
+    ports:
+      - "8085:9090"
     volumes:
       - static_data_vitrine_prod:/App/static_root
     labels:
