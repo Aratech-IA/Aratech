@@ -2,7 +2,7 @@ name: CI - Build, Push and Deploy Docker Image
 
 on:
   push:
-    branches: ["new_server" ]
+    branches: ["main" ]
   pull_request:
     branches: ["main"]
     types: [opened, synchronize, reopened]
