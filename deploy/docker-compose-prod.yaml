@@ -17,7 +17,7 @@ services:
     image: aratechia/vitrine:${IMAGE_TAG}
     environment:
       - DEBUG=${DEBUG}
-      - SECRET_KEY=${DJANGO_SECRET_KEY_PROD}
+      - SECRET_KEY=${DJANGO_SECRET_KEY}
       - STATIC_URL=${STATIC_URL}
       - EMAIL_HOST=${EMAIL_HOST}
       - EMAIL_PORT=${EMAIL_PORT}
