@@ -28,11 +28,17 @@ jobs:
         run: |
           echo "DEPLOY_ENV=re7" > version.env
           echo "IMAGE_TAG=${{ github.sha }}" >> version.env
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY_RE7 }}" > secret.env
+          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
+          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Set variables for release
         if: github.event_name == 'release'
         run: |
           echo "DEPLOY_ENV=prod" > version.env
           echo "IMAGE_TAG=${{ github.event.release.tag_name }}" >> version.env
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY_PROD }}" > secret.env
+          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
+          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Upload code as artifact
         uses: actions/upload-artifact@v4
         with:
