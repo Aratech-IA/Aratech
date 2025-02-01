@@ -37,7 +37,7 @@ services:
       - "traefik.http.services.django-vitrine.loadbalancer.server.port=9090"
       - "traefik.http.routers.django-vitrine_http.entrypoints=web"
       - "traefik.http.routers.django-vitrine_http.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
-      - "traefik.http.routers.django-vitrine_http.middlewares=vitrine-re7_https"
+      - "traefik.http.routers.django-vitrine_http.middlewares=vitrine_https"
       - "traefik.http.middlewares.vitrine_https.redirectscheme.scheme=https"
       - "traefik.http.routers.django-vitrine.entrypoints=websecure"
       - "traefik.http.routers.django-vitrine.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
