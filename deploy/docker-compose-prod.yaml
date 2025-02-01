@@ -1,0 +1,54 @@
+services:
+
+  web-vitrine:
+    image: nginx
+    volumes:
+      - static_data_vitrine_prod:/usr/share/nginx/html/static_root
+      - ./nginx.conf:/etc/nginx/conf.d/vitrine.conf
+    labels:
+      - "traefik.http.routers.web-vitrine.rule=Host(`static.aratech.fr`)"
+      - "traefik.http.routers.web-vitrine.tls=true"
+      - "traefik.http.routers.web-vitrine.tls.certresolver=myresolver"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.23
+
+  django-vitrine:
+    image: aratechia/vitrine:${IMAGE_TAG}
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${DJANGO_SECRET_KEY_PROD}
+      - STATIC_URL=${STATIC_URL}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_SENDGRID_PASSWORD}
+      - EMAIL_CONTACT=${EMAIL_CONTACT}
+      - CAPTCHA_SECRETKEY=${CAPTCHA_SECRETKEY}
+    command: |
+      sh -c "
+      /App/start.sh
+      "
+    volumes:
+      - static_data_vitrine_prod:/App/static_root
+    labels:
+      - "traefik.http.services.django-vitrine.loadbalancer.server.port=9090"
+      - "traefik.http.routers.django-vitrine_http.entrypoints=web"
+      - "traefik.http.routers.django-vitrine_http.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine_http.middlewares=vitrine-re7_https"
+      - "traefik.http.middlewares.vitrine_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.django-vitrine.entrypoints=websecure"
+      - "traefik.http.routers.django-vitrine.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine.tls=true"
+      - "traefik.http.routers.django-vitrine.tls.certresolver=myresolver"
+      - "traefik.http.middlewares.vitrineHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.24
+
+networks:
+  compose_traefik_aratech_net:
+    external: true
+
+volumes:
+  static_data_vitrine_prod:

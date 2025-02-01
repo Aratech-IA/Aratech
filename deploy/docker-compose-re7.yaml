@@ -1,0 +1,60 @@
+services:
+
+  web-vitrine-re7:
+    image: nginx
+    volumes:
+      - static_data_vitrine:/usr/share/nginx/html/static_root
+      - ./nginx.conf:/etc/nginx/conf.d/vitrine.conf
+    labels:
+      - "traefik.http.routers.web-vitrine-re7.rule=Host(`static-re7.aratech.fr`)"
+      - "traefik.http.routers.web-vitrine-re7.tls=true"
+      - "traefik.http.routers.web-vitrine-re7.tls.certresolver=myresolver"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.22
+
+  django-vitrine-re7:
+    image: aratechia/vitrine:${IMAGE_TAG}
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${DJANGO_SECRET_KEY_RE7}
+      - STATIC_URL=${STATIC_URL}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_SENDGRID_PASSWORD}
+      - EMAIL_CONTACT=${EMAIL_CONTACT}
+      - CAPTCHA_SECRETKEY=${CAPTCHA_SECRETKEY}
+    command: |
+      sh -c "
+      /App/start.sh
+      "
+    volumes:
+      - static_data_vitrine:/App/static_root
+    labels:
+      - "traefik.http.services.django-vitrine-re7.loadbalancer.server.port=9090"
+      - "traefik.http.routers.django-vitrine-re7_http.entrypoints=web"
+      - "traefik.http.routers.django-vitrine-re7_http.rule=Host(`re7.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine-re7_http.middlewares=vitrine-re7_https"
+      - "traefik.http.middlewares.vitrine-re7_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.django-vitrine-re7.entrypoints=websecure"
+      - "traefik.http.routers.django-vitrine-re7.rule=Host(`re7.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine-re7.tls=true"
+      - "traefik.http.routers.django-vitrine-re7.tls.certresolver=myresolver"
+      - "traefik.http.routers.django-vitrine-re7.middlewares=vitrine-auth"
+      # Note: when used in docker-compose.yml all dollar signs in the hash need to be doubled for escaping.
+      # To create a user:password pair, the following command can be used:
+      # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
+      - "traefik.http.middlewares.vitrine-auth.basicauth.users=vitrine:$$apr1$$f4ZHGTRQ$$88V6AQCN6VwSJqSwdVEl10"
+      # add header for csrf
+      - "traefik.http.middlewares.vitrine-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.21
+
+networks:
+  compose_traefik_aratech_net:
+    external: true
+
+volumes:
+  static_data_vitrine:
