@@ -9,6 +9,7 @@ services:
       - "traefik.http.routers.web-vitrine-re7.rule=Host(`static-re7.aratech.fr`)"
       - "traefik.http.routers.web-vitrine-re7.tls=true"
       - "traefik.http.routers.web-vitrine-re7.tls.certresolver=myresolver"
+      - "traefik.http.routers.web-vitrine-re7.entrypoints=websecure"
     networks:
       compose_traefik_aratech_net:
         ipv4_address: 10.5.5.22
