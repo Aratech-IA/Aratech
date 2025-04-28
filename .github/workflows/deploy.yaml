@@ -131,13 +131,13 @@ jobs:
           source version.env
           cp version.env ${{ env.VERSION_FILE }}
           # Get secret parameters from scaleway secrets
-          POSTGRES_PASSWORD=$(jq -r ".DATABASE_PASSWORD_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
+          EMAIL_SENDGRID_PASSWORD=$(jq -r ".EMAIL_SENDGRID_PASSWORD_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
           DJANGO_SECRET_KEY=$(jq -r ".DJANGO_SECRET_KEY_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
-          NCBI_API_KEY=$(jq -r ".NCBI_API_KEY_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
+          CAPTCHA_SECRETKEY=$(jq -r ".CAPTCHA_SECRETKEY_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
           # export variables to file
-          echo "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" > ${{ env.SECRET_FILE }}
+          echo "EMAIL_SENDGRID_PASSWORD=$EMAIL_SENDGRID_PASSWORD" > ${{ env.SECRET_FILE }}
           echo "DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY" >> ${{ env.SECRET_FILE }}
-          echo "NCBI_API_KEY=$NCBI_API_KEY" >> ${{ env.SECRET_FILE }}
+          echo "CAPTCHA_SECRETKEY=$CAPTCHA_SECRETKEY" >> ${{ env.SECRET_FILE }}
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -153,7 +153,7 @@ jobs:
             ./deploy/start_remote_no_daemon.sh,
             ./deploy/stop_remote.sh,
             ./deploy/nginx.conf
-          target: /home/bioledge/
+          target: /home/vitrine/
           port: ${{ env.SSH_PORT }}
           overwrite: true
 
@@ -165,8 +165,8 @@ jobs:
           key_path: ./ssh_key
           port: ${{ env.SSH_PORT }}
           script: |
-            docker login rg.nl-ams.scw.cloud/bioledge -u nologin --password ${{ secrets.SCW_SECRET_KEY }}
+            docker login rg.nl-ams.scw.cloud/vitrine -u nologin --password ${{ secrets.SCW_SECRET_KEY }}
             source ${{ env.VERSION_FILE }}
-            cat ./deploy/bioledge-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} ${{ env.VERSION_FILE }} > combined-$DEPLOY_ENV.env
+            cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} ${{ env.VERSION_FILE }} > combined-$DEPLOY_ENV.env
             cd deploy
             bash start_remote.sh $DEPLOY_ENV
