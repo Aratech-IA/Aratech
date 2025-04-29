@@ -11,8 +11,7 @@ services:
       - "traefik.http.routers.web-vitrine.tls.certresolver=myresolver"
       - "traefik.http.routers.web-vitrine.entrypoints=websecure"
     networks:
-      compose_traefik_aratech_net:
-        ipv4_address: 10.5.5.23
+      network_vitrine_prod:
 
   django-vitrine:
     image: aratechia/vitrine:${IMAGE_TAG}
@@ -46,12 +45,10 @@ services:
       - "traefik.http.routers.django-vitrine.tls.certresolver=myresolver"
       - "traefik.http.middlewares.vitrineHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
-      compose_traefik_aratech_net:
-        ipv4_address: 10.5.5.24
+      network_vitrine_prod:
 
 networks:
-  compose_traefik_aratech_net:
-    external: true
+  network_vitrine_prod:
 
 volumes:
   static_data_vitrine_prod:

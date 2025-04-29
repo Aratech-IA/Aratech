@@ -11,8 +11,7 @@ services:
       - "traefik.http.routers.web-vitrine-re7.tls.certresolver=myresolver"
       - "traefik.http.routers.web-vitrine-re7.entrypoints=websecure"
     networks:
-      compose_traefik_aratech_net:
-        ipv4_address: 10.5.5.22
+      network_vitrine_re7:
 
   django-vitrine-re7:
     image: aratechia/vitrine:${IMAGE_TAG}
@@ -50,11 +49,10 @@ services:
       # add header for csrf
       - "traefik.http.middlewares.vitrine-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
-      compose_traefik_aratech_net:
-        ipv4_address: 10.5.5.21
+      network_vitrine_re7:
 
 networks:
-  compose_traefik_aratech_net:
+  network_vitrine_re7:
     external: true
 
 volumes:
