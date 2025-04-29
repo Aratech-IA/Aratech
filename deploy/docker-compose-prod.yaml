@@ -40,7 +40,7 @@ services:
       - "traefik.http.routers.django-vitrine_http.middlewares=vitrine_https"
       - "traefik.http.middlewares.vitrine_https.redirectscheme.scheme=https"
       - "traefik.http.routers.django-vitrine.entrypoints=websecure"
-      - "traefik.http.routers.django-vitrine.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine.rule= Host(`toto.aratech.fr`)"
       - "traefik.http.routers.django-vitrine.tls=true"
       - "traefik.http.routers.django-vitrine.tls.certresolver=myresolver"
       - "traefik.http.middlewares.vitrineHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
