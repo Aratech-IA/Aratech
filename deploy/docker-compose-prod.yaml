@@ -2,6 +2,8 @@ services:
 
   web-vitrine:
     image: nginx
+    container_name: web-vitrine-prod
+    restart: unless-stopped
     volumes:
       - static_data_vitrine_prod:/usr/share/nginx/html/static_root
       - ./nginx.conf:/etc/nginx/conf.d/vitrine.conf
@@ -15,6 +17,8 @@ services:
 
   django-vitrine:
     image: rg.nl-ams.scw.cloud/aratech/vitrine:${IMAGE_TAG}
+    container_name: django-vitrine-prod
+    restart: unless-stopped
     environment:
       - DEBUG=${DEBUG}
       - SECRET_KEY=${DJANGO_SECRET_KEY}
@@ -40,7 +44,7 @@ services:
       - "traefik.http.routers.django-vitrine_http.middlewares=vitrine_https"
       - "traefik.http.middlewares.vitrine_https.redirectscheme.scheme=https"
       - "traefik.http.routers.django-vitrine.entrypoints=websecure"
-      - "traefik.http.routers.django-vitrine.rule= Host(`toto.aratech.fr`)"
+      - "traefik.http.routers.django-vitrine.rule=Host(`aratech.fr`) || Host(`www.aratech.fr`)"
       - "traefik.http.routers.django-vitrine.tls=true"
       - "traefik.http.routers.django-vitrine.tls.certresolver=myresolver"
       - "traefik.http.middlewares.vitrineHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
@@ -49,6 +53,7 @@ services:
 
 networks:
   network_vitrine_prod:
+    external: true
 
 volumes:
   static_data_vitrine_prod:

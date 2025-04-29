@@ -2,6 +2,8 @@ services:
 
   web-vitrine-re7:
     image: nginx
+    container_name: web-vitrine-re7
+    restart: unless-stopped
     volumes:
       - static_data_vitrine:/usr/share/nginx/html/static_root
       - ./nginx.conf:/etc/nginx/conf.d/vitrine.conf
@@ -15,6 +17,8 @@ services:
 
   django-vitrine-re7:
     image: rg.nl-ams.scw.cloud/aratech/vitrine:${IMAGE_TAG}
+    container_name: django-vitrine-re7
+    restart: unless-stopped
     environment:
       - DEBUG=${DEBUG}
       - SECRET_KEY=${DJANGO_SECRET_KEY}
