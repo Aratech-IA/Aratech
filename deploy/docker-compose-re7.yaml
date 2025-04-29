@@ -14,7 +14,7 @@ services:
       network_vitrine_re7:
 
   django-vitrine-re7:
-    image: arg.nl-ams.scw.cloud/aratech/vitrine:${IMAGE_TAG}
+    image: rg.nl-ams.scw.cloud/aratech/vitrine:${IMAGE_TAG}
     environment:
       - DEBUG=${DEBUG}
       - SECRET_KEY=${DJANGO_SECRET_KEY}
