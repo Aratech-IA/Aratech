@@ -165,7 +165,7 @@ jobs:
           key_path: ./ssh_key
           port: ${{ env.SSH_PORT }}
           script: |
-            docker login rg.nl-ams.scw.cloud/vitrine -u nologin --password ${{ secrets.SCW_SECRET_KEY }}
+            docker login rg.nl-ams.scw.cloud/aratech -u nologin --password ${{ secrets.SCW_SECRET_KEY }}
             source ${{ env.VERSION_FILE }}
             cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} ${{ env.VERSION_FILE }} > combined-$DEPLOY_ENV.env
             cd deploy
