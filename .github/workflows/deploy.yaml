@@ -2,7 +2,7 @@ name: CI - Build, Push and Deploy Docker Image
 
 on:
   push:
-    branches: ["main" ]
+    branches: ["jjehl-ci" ]
   pull_request:
     branches: ["main"]
     types: [opened, synchronize, reopened]
@@ -10,8 +10,29 @@ on:
     types: [published]
 
 jobs:
-  prepare:
+  check_files_changed:
+    name: "Check changes"
     runs-on: ubuntu-latest
+    # Declare outputs for next jobs
+    outputs:
+      deploy_changed: ${{ steps.changed-files-specific.outputs.any_changed }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # Checkout as many commits as needed for the diff
+          fetch-depth: 0
+      - name: Check if any file in deploy directory has changed
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            deploy/** 
+            src/**
+  prepare:
+    name: "Prepare code"
+    runs-on: ubuntu-latest
+    needs: check_files_changed
+    if: needs.check_files_changed.outputs.deploy_changed == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,34 +41,27 @@ jobs:
         run: |
           echo "DEPLOY_ENV=re7" > version.env
           echo "IMAGE_TAG=${{ github.sha }}" >> version.env
-          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY_RE7 }}" > secret.env
-          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
-          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Set variables for pull request
         if: github.event_name == 'pull_request'
         run: |
           echo "DEPLOY_ENV=re7" > version.env
           echo "IMAGE_TAG=${{ github.sha }}" >> version.env
-          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY_RE7 }}" > secret.env
-          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
-          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Set variables for release
         if: github.event_name == 'release'
         run: |
           echo "DEPLOY_ENV=prod" > version.env
           echo "IMAGE_TAG=${{ github.event.release.tag_name }}" >> version.env
-          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY_PROD }}" > secret.env
-          echo "EMAIL_SENDGRID_PASSWORD=${{ secrets.EMAIL_SENDGRID_PASSWORD }}" >> secret.env
-          echo "CAPTCHA_SECRETKEY=${{ secrets.CAPTCHA_SECRETKEY }}" >> secret.env
       - name: Upload code as artifact
         uses: actions/upload-artifact@v4
         with:
           name: code
-          path: .
+          path: |
+            .
 
   build-and-push:
-    runs-on: ubuntu-latest
+    name: "Make Docker images"
     needs: prepare
+    runs-on: ubuntu-latest
     steps:
       - name: Download code artifact
         uses: actions/download-artifact@v4
@@ -59,17 +73,19 @@ jobs:
         run: |
           source version.env
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
-      - name: Login to Docker Hub
+      - name: Login to Scaleway container Registry
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          registry: rg.nl-ams.scw.cloud
+          username: nologin
+          password: ${{ secrets.SCW_SECRET_KEY }}
       - name: Build Docker image
-        run: docker build -f deploy/Dockerfile -t aratechia/vitrine:${{ env.IMAGE_TAG }} .
+        run: docker build -f deploy/Dockerfile -t rg.nl-ams.scw.cloud/aratech/vitrine:${{ env.IMAGE_TAG }} .
       - name: Push Docker image
-        run: docker push aratechia/vitrine:${{ env.IMAGE_TAG }}
+        run: docker push rg.nl-ams.scw.cloud/aratech/vitrine:${{ env.IMAGE_TAG }}
 
   deploy:
+    name: "Deploy on OVH"
     runs-on: ubuntu-latest
     needs: build-and-push
     steps:
@@ -78,48 +94,78 @@ jobs:
         with:
           name: code
           path: .
-
-      - name: Set version file
-        id: version-file
+      - name: Set vars from version.env
         run: |
           source version.env
-          echo "VERSION_FILE=version_${DEPLOY_ENV}.env" >> $GITHUB_ENV
-          echo "SECRET_FILE=secret_${DEPLOY_ENV}.env" >> $GITHUB_ENV
-
-      - name: Display variables
+          echo "SSH_KEY_SECRET=ssh-key-${DEPLOY_ENV}" >> $GITHUB_ENV
+          echo "VERSION_FILE=version-${DEPLOY_ENV}.env" >> $GITHUB_ENV
+          echo "SECRET_FILE=secret-${DEPLOY_ENV}.env" >> $GITHUB_ENV
+          echo "COMPOSE_FILE=docker-compose-${DEPLOY_ENV}.yaml" >> $GITHUB_ENV
+          echo "APP_ENV=vitrine-${DEPLOY_ENV}.env" >> $GITHUB_ENV
+      - name: Get scaleways secrets using scaleways credential
+        uses: scaleway/action-scw-secret@v0
+        with:
+          secret-names: |
+            /vitrine-server/secret-connect
+            /vitrine-server/${{ env.SSH_KEY_SECRET }}
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Set vars from scaleway
         run: |
-          cat version.env
-          echo "${{ env.VERSION_FILE }}"
-          mv version.env ${{ env.VERSION_FILE }}
-          mv secret.env ${{ env.SECRET_FILE }}
-
+          source version.env
+          # Get ssh parameters from scaleway secrets
+          SSH_HOST=$(echo "$SECRET_CONNECT" | jq -r ".SSH_HOST_${DEPLOY_ENV^^}")
+          SSH_USER=$(echo "$SECRET_CONNECT" | jq -r ".SSH_USER_${DEPLOY_ENV^^}")
+          SSH_PORT=$(echo "$SECRET_CONNECT" | jq -r ".SSH_PORT_${DEPLOY_ENV^^}")
+          declare -n SSH_KEY_JSON="SSH_KEY_${DEPLOY_ENV^^}"
+          SSH_KEY=$(echo "$SSH_KEY_JSON" | jq -r ".ssh_private_key")
+          # export variables to be used in next steps
+          echo "SSH_HOST=$SSH_HOST" >> $GITHUB_ENV
+          echo "SSH_USER=$SSH_USER" >> $GITHUB_ENV
+          echo "SSH_PORT=$SSH_PORT" >> $GITHUB_ENV
+          echo "$SSH_KEY" > ssh_key
+      - name: Set specific secret for project in ${{ env.SECRET_FILE }}
+        run: |
+          source version.env
+          cp version.env ${{ env.VERSION_FILE }}
+          # Get secret parameters from scaleway secrets
+          EMAIL_SENDGRID_PASSWORD=$(jq -r ".EMAIL_SENDGRID_PASSWORD_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
+          DJANGO_SECRET_KEY=$(jq -r ".DJANGO_SECRET_KEY_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
+          CAPTCHA_SECRETKEY=$(jq -r ".CAPTCHA_SECRETKEY_${DEPLOY_ENV^^}" <<<"$SECRET_CONNECT")
+          # export variables to file
+          echo "EMAIL_SENDGRID_PASSWORD=$EMAIL_SENDGRID_PASSWORD" > ${{ env.SECRET_FILE }}
+          echo "DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY" >> ${{ env.SECRET_FILE }}
+          echo "CAPTCHA_SECRETKEY=$CAPTCHA_SECRETKEY" >> ${{ env.SECRET_FILE }}
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SSH_VITRINE_HOST }}
-          username: ${{ secrets.SSH_VITRINE_USER }}
-          key: ${{ secrets.SSH_VITRINE_KEY }}
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key_path: ./ssh_key
           source: >
-            ./deploy/start_remote.sh,
-            ./deploy/docker-compose-re7.yaml,
-            ./deploy/docker-compose-prod.yaml,
+            ./deploy/${{ env.COMPOSE_FILE }},
+            ./deploy/${{ env.APP_ENV }},
             ./${{ env.VERSION_FILE }},
             ./${{ env.SECRET_FILE }},
-            ./deploy/vitrine-re7.env,
-            ./deploy/vitrine-prod.env,
+            ./deploy/start_remote.sh,
+            ./deploy/start_remote_no_daemon.sh,
+            ./deploy/stop_remote.sh,
             ./deploy/nginx.conf
           target: /home/vitrine/
-          port: ${{ secrets.SSH_VITRINE_PORT }}
+          port: ${{ env.SSH_PORT }}
           overwrite: true
 
       - name: Start docker compose
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.SSH_VITRINE_HOST }}
-          username: ${{ secrets.SSH_VITRINE_USER }}
-          key: ${{ secrets.SSH_VITRINE_KEY }}
-          port: ${{ secrets.SSH_VITRINE_PORT }}
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key_path: ./ssh_key
+          port: ${{ env.SSH_PORT }}
           script: |
+            docker login rg.nl-ams.scw.cloud/vitrine -u nologin --password ${{ secrets.SCW_SECRET_KEY }}
             source ${{ env.VERSION_FILE }}
             cat ./deploy/vitrine-$DEPLOY_ENV.env ${{ env.SECRET_FILE }} ${{ env.VERSION_FILE }} > combined-$DEPLOY_ENV.env
             cd deploy
